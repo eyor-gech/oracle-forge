@@ -41,16 +41,16 @@ _Covers: X, Reddit, Medium, LinkedIn, Discord_
 
 | Date | Author | Title | Platform | Word Count | Link | Views |
 |------|--------|-------|----------|------------|------|-------|
-| 2026-04-10 | Kirubel | Engineering Resilience: Solving the Cross-Database Join Key Format Mismatch in AI Agents | Medium | ~1200 | [link](https://medium.com/@kirutew17654321/engineering-resilience-solving-the-cross-database-join-key-format-mismatch-in-ai-agents-ffb17b9d5a02) | -- |
-| 2026-04-11 | Meseret | The Silent Killer of AI Data Agents (And How We're Engineering Around It) | LinkedIn | -- | [link](https://www.linkedin.com/posts/meseret-bolled-8b395325b_aiengineering-dataengineering-aiagents-activity-7448667030389497856-bPq4) | -- |
+| 2026-04-10 | Kirubel | Engineering Resilience: Solving the Cross-Database Join Key Format Mismatch in AI Agents | Medium | ~1200 | [link](https://medium.com/@kirutew17654321/engineering-resilience-solving-the-cross-database-join-key-format-mismatch-in-ai-agents-ffb17b9d5a02) | 25 claps |
+| 2026-04-11 | Meseret | The Silent Killer of AI Data Agents (And How We're Engineering Around It) | LinkedIn | -- | [link](https://www.linkedin.com/posts/meseret-bolled-8b395325b_aiengineering-dataengineering-aiagents-activity-7448667030389497856-bPq4) | 35 likes, 1 comment |
 
 ### Reddit
 
-| Date | Author | Subreddit | Title | Link | Upvotes | Comments |
-|------|--------|-----------|-------|------|---------|----------|
+| Date | Author | Subreddit | Title | Link | Status | Notes |
+|------|--------|-----------|-------|------|--------|-------|
 | 2026-04-11 | Kirubel | r/learnmachinelearning | DataAgentBench shows the best frontier model hits 38% on realistic multi-DB data queries - what's actually causing the failures? | [link](https://www.reddit.com/r/learnmachinelearning/comments/1sieo3g/dataagentbench_shows_the_best_frontier_model_hits/) | -- | ⚠️ POST REMOVED by Reddit filters (account: Silly-Effort-6843) |
 | 2026-04-11 | Kirubel | r/LocalLLaMA | I kept running into cases where retrieval was the bottleneck -- injection testing with Groq Llama (21/21 pass rate) | [link](https://www.reddit.com/r/LocalLLaMA/comments/1siqbda/i_kept_running_into_cases_where_retrieval_was/) | -- | ⚠️ POST REMOVED by Reddit filters (account: Silly-Effort-6843). u/matt-k-wong reply still visible but OP gone. |
-| 2026-04-13 | Kirubel | r/learnmachinelearning | Silent cross database join failures: has anyone dealt with int vs prefixed string ID mismatches? | [link](https://www.reddit.com/r/learnmachinelearning/comments/1sknnoa/silent_cross_database_join_failures_has_anyone/) | TBD | TBD |
+| 2026-04-13 | Kirubel | r/learnmachinelearning | Silent cross database join failures: has anyone dealt with int vs prefixed string ID mismatches? | [link](https://www.reddit.com/r/learnmachinelearning/comments/1sknnoa/silent_cross_database_join_failures_has_anyone/) | -- | 1 comment |
 
 ### Reddit Replies (substantive comments in threads)
 
@@ -119,9 +119,10 @@ _Covers: X, Reddit, Medium, LinkedIn, Discord_
 | 2026-04-14 | Kirubel | Community Post | AI/Python/Data community: silent join mismatch, normalize_join_key() | [link](https://x.com/kirubeltewodro2/status/2043995579647439321) | TBD | TBD |
 | 2026-04-14 | Kirubel | Community Post | Open Source Contributors: normalize_join_key() multi-DB utility | [link](https://x.com/kirubeltewodro2/status/2043996542756106502) | TBD | **Admin @jcubic replied asking if OSS** |
 | 2026-04-14 | Kirubel | Community Post | AI Agents: HOT TAKE — RAG is wrong architecture for data agents, "change my mind" | [link](https://x.com/kirubeltewodro2/status/2044017533683196221) | TBD | TBD |
-| 2026-04-14 | Kirubel | Community Post | Machine Learning: 38% ceiling isn't a model problem, it's context engineering | [link](https://x.com/kirubeltewodro2/status/2044017762004291818) | TBD | **@anandrishv replied asking topic — replied back with DAB + info density** |
+| 2026-04-14 | Kirubel | Community Post | Machine Learning: 38% ceiling isn't a model problem, it's context engineering | [link](https://x.com/kirubeltewodro2/status/2044017762004291818) | 89 views, 3 likes | **1 (@anandrishv)** |
 | 2026-04-14 | Kirubel | Community Post | AI/Python/Data: WHERE LIKE '%wait%' overcounts 3-4x, "worst horror story?" | [link](https://x.com/kirubeltewodro2/status/2044039244964823216) | TBD | TBD |
 | 2026-04-14 | Kirubel | Community Post | Open Source: open-sourced KB, 21 docs tested, PRs welcome + repo link | [link](https://x.com/kirubeltewodro2/status/2044039490868564383) | TBD | TBD |
+| 2026-04-15 | Kirubel | Threaded Tweet | Article B Launch: KB Injection Testing vs RAG | [link](https://x.com/kirubeltewodro2/status/2044397299275559162) | 37 views, 3 likes | **1** |
 
 ### Medium/LinkedIn
 
@@ -131,9 +132,9 @@ _Covers: X, Reddit, Medium, LinkedIn, Discord_
 
 ### Reddit
 
-| Date | Author | Subreddit | Title | Link | Upvotes | Comments |
-|------|--------|-----------|-------|------|---------|----------|
-| 2026-04-13 | Kirubel | r/learnmachinelearning | Silent cross database join failures: has anyone dealt with int vs prefixed string ID mismatches? | [link](https://www.reddit.com/r/learnmachinelearning/comments/1sknnoa/silent_cross_database_join_failures_has_anyone/) | TBD | TBD |
+| Date | Author | Subreddit | Title | Link | Status | Notes |
+|------|--------|-----------|-------|------|--------|-------|
+| 2026-04-13 | Kirubel | r/learnmachinelearning | Silent cross database join failures: has anyone dealt with int vs prefixed string ID mismatches? | [link](https://www.reddit.com/r/learnmachinelearning/comments/1sknnoa/silent_cross_database_join_failures_has_anyone/) | -- | 1 comment |
 
 
 ### Reddit Replies (Week 9, account: u/Far-Comparison-9745)
@@ -148,7 +149,17 @@ _Covers: X, Reddit, Medium, LinkedIn, Discord_
 | 2026-04-14 | Kirubel | r/LocalLLaMA | EdgeVDB: On-Device Vector Database | Connected on-device search to bounded-domain injection testing, suggested pre-structured docs | [reply](https://www.reddit.com/r/LocalLLaMA/comments/1sl3rtg/comment/og5aid8/) |
 | 2026-04-14 | Meseret | r/learnmachinelearning | Post asking about benchmark for reasoning stability in long LLM contexts | Answered with DAB reference: 54 queries across 4 DB types, 38% pass@1 ceiling, 40% of failures from incorrect planning compounding across steps. Referenced arxiv.org/abs/2603.20576. Connected to team's live experience building against DAB. | [reply](https://www.reddit.com/r/learnmachinelearning/comments/1slzhgy/multidatabase_query_in_agent/) |
 | 2026-04-14 | Meseret | r/LocalLLaMA | Posted question about silent failure in mid-chain multi-database queries | Post deleted by Reddit moderators before receiving replies. Question asked: when agent fails switching from PostgreSQL to MongoDB does it surface as error or silent wrong result? | -- |
+| 2026-04-15 | Kirubel | r/LocalLLaMA | I kept running into cases where retrieval was the bottleneck — Article B (8B model injection) | [link](https://www.reddit.com/r/LocalLLaMA/comments/1sm4s0y/) | -- | ⚠️ REMOVED BY FILTERS |
 | 2026-04-15 | Meseret | r/learnmachinelearning | Posted the same question about silent failure in mid-chain multi-database queries | waiting for reply from the community. Question asked: when agent fails switching from PostgreSQL to MongoDB does it surface as error or silent wrong result? |[reply](https://www.reddit.com/r/learnmachinelearning/comments/1q9egkh/comment/og3jf00/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) |
+| 2026-04-16 | Kirubel | r/learnmachinelearning | Why a model can look good on a quick test and still fail under repeated trials | Posted evaluation framing: low-trial pass@1 can hide instability; repeated trials expose branching, routing, and key-normalization failures. | [post](https://www.reddit.com/r/learnmachinelearning/comments/1smzrav/why_a_model_can_look_good_on_a_quick_test_and/) | -- |
+| 2026-04-16 | Kirubel | r/learnmachinelearning | Reply to Soft_Cress_8870 | Connected small-batch image pipeline failures to the same hidden branching / distribution shift pattern; asked whether failures come from specific image classes or from state accumulation across the batch. | [reply](https://www.reddit.com/r/learnmachinelearning/comments/1smzrav/why_a_model_can_look_good_on_a_quick_test_and/oghxl2z/) |
+| 2026-04-16 | Kirubel | r/learnmachinelearning | Reply to NarutoLLN | Agreed repeated draws reveal the actual distribution and that pass@1 on one draw can be luck; asked whether mean+variance or repeated-run score is the preferred reporting format. | [reply](https://www.reddit.com/r/learnmachinelearning/comments/1smzrav/why_a_model_can_look_good_on_a_quick_test_and/oghxsgv/) |
+| 2026-04-16 | Kirubel | r/SQL | Cross database join keys are a silent failure mode in multi DB agents | Posted a multi-DB join-key failure example (PG subscriber_id 1234567 vs Mongo CUST-1234567) and asked where to place the normalization boundary. | [post](https://www.reddit.com/r/SQL/comments/1smzvar/cross_database_join_keys_are_a_silent_failure/) | -- |
+| 2026-04-16 | Kirubel | r/SQL | Posted follow-up reply to B1zmark | Explained that MongoDB in this case is backing semi-structured records where the join key is contractually fixed by entity type. | [reply](https://www.reddit.com/r/SQL/comments/1smzvar/comment/oghyfwi/) |
+| 2026-04-16 | Kirubel | r/SQL | Posted follow-up reply to Eleventhousand | Agreed that one-db/app-layer stitching is the common boundary for owned systems, but clarified our case spans systems we do not own, so key normalization has to happen before join resolution. | [reply](https://www.reddit.com/r/SQL/s/i9ZgFWUWKw) |
+| 2026-04-16 | Kirubel | r/LocalLLaMA | Your model might not be the problem: 13 KB rewrites took us from 60% to 100% extraction on Llama 3.1 8B | Posted the KB injection-testing result with 21-doc coverage and context-engineering patterns that improved extraction quality on 8B. | [post](https://www.reddit.com/r/LocalLLaMA/comments/1sn19cl/your_model_might_not_be_the_problem_13_kb/) | -- |
+| 2026-04-16 | Kirubel | r/LocalLLaMA | Reply to Corporate_Drone31 | Summarized 8B-scale failure patterns and asked whether their main bottleneck is retrieval, instruction following, or schema/domain mismatch. | [reply](https://www.reddit.com/r/LocalLLaMA/comments/1sn19cl/your_model_might_not_be_the_problem_13_kb/ogi9jor/) | -- |
+| 2026-04-16 | Kirubel | r/LocalLLaMA | Reply to AutomataManifold | Treated evaluation as the useful superpower and pointed back to the brittle spots exposed by repeated testing. | [reply](https://www.reddit.com/r/LocalLLaMA/comments/1sn19cl/comment/ogigziv/) | -- |
 
 ---
 
@@ -172,8 +183,8 @@ _External responses or findings that changed the team's technical approach._
 
 ### Week 8 Totals
 - **X posts:** 3
-- **Medium articles:** 1 (Kirubel, ~1200 words, published)
-- **LinkedIn articles:** 1 (Meseret, "Silent Killer of AI Data Agents", ~1800 words published Apr 11)
+- **Medium articles:** 1 (Kirubel, ~1200 words, 25 claps)
+- **LinkedIn articles:** 1 (Meseret, ~1800 words, 35 likes)
 - **SC article deliverable:** ✅ 2/2
 - **Reddit posts:** 2
 - **Reddit comments/replies:** 2 substantive (u/matt-k-wong validation thread + "550 Free LLM Tools" comment)
@@ -181,11 +192,11 @@ _External responses or findings that changed the team's technical approach._
 - **Slack engagement:** daily standup summary,sharing different resources related to the topics,daily update of what shipped,what stuck and future works.
 
 ### Week 9 In-Progress Totals (as of 2026-04-15)
-- **X reply-placements (Apr 13):** 5 (one received reply from @matanzutta validating thesis)
+- **X items (Apr 13-15):** 14 total (5 reply-placements, 8 community posts, 1 Article B launch thread)
 - **X Community posts (Apr 14):** 8 across 4 communities (AI Agents, ML, AI/Python/Data, Open Source). 2 received practitioner replies (@jcubic, @anandrishv).
 - **X Communities joined:** 4 (AI Agents 14.7K, ML, AI/Python/Data, Open Source Contributors)
 - **Medium articles published (Week 9):** 1 (Kirubel, "Why Your AI Data Agent Silently Fails on Cross-Database Queries", Apr 14)
-- **Reddit posts:** 2 (new "Silent cross database join failures" post on and silent failure in mid-chain multi-database queries  r/learnmachinelearning)
+- **Reddit posts:** 3 (Article B launch [removed], Silent Join failures, Silent Failure question)
 - **Reddit replies (Apr 14, deployed by Kirubel as u/Far-Comparison-9745):** 6 substantive replies on r/LocalLLaMA + r/learnmachinelearning
 - **Reddit replies received from external practitioners:** 1 (u/This-You-2737 on join-failures post recommending Great Expectations + Scaylor Orchestrate)
 - **Discord:** 3 servers joined (HF, EleutherAI, LlamaIndex). 1 substantive HF #general practitioner exchange (5 messages, ~57 min) with user H$Go on cross-DB joins, MCP discovery, KB injection testing, Level 1 vs Level 2 failure framing.
