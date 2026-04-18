@@ -144,12 +144,13 @@ _Each entry names the specific technical focus and intelligence gathered._
 - **Reddit replies:** u/matt-k-wong thread (r/LocalLLaMA) is genuine external validation. Note: Silly-Effort-6843 posts removed by Reddit filters; active account is now Far-Comparison-9745.
 - **X reply-threading:** ✅ 5 placements delivered Apr 13. **External validation received from @matanzutta.**
 - **Unstructured text + Domain knowledge content:** Now well-represented (Tweet 2 + Tweet 5 deployed in real threads, @matanzutta validation on Domain Knowledge specifically).
+- **Medium**- 2 articles posted on "Why Your AI Data Agent Silently Fails on Cross Database Queries (And You Don’t Even Notice) and InjectionTested 21 Knowledge Base Documents on an 8B Model."
+- **Linkedin**- Article posted on “Testing 21 knowledge base documents on a small model revealed what needed fixing.”
 
-## Remaining Gaps for Final Submission (Apr 18)
-- **DAB benchmark scores:** Probes designed and runner exists, but real pass/fail scores from end-to-end agent runs still pending.
-- **Discord substantive comments:** Servers joined, first comment in HF/EleutherAI/LlamaIndex deploying Apr 14-16.
-- **Final engagement summary:** Compile reach metrics + notable responses for final PDF.
-
+## on Week 9 we improved on
+- Daily slack engagement on  letting know the members the current updates on stand meeting and others
+- More engagement on Reddit,posting and replying related our project and shared to our teams what we get.
+- Additional +1 Medium article posted
 
 ## Auto Log (Unreviewed)
 | Community Intelligence | r/learnmachinelearning | Evaluation | New external comment from NarutoLLN: When doing reporting, I will present confidence or credibility interval around the mean. I find when k is small, using bayesian benchmarking is a bit more appealing. | https://www.reddit.com/r/learnmachinelearning/comments/1smzrav/comment/ogktoy0/ |

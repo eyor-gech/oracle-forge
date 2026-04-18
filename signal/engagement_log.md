@@ -162,6 +162,9 @@ _Covers: X, Reddit, Medium, LinkedIn, Discord_
 | 2026-04-16 | Kirubel | r/SQL | Reply to B1zmark (transformation-layer follow-up) | Acknowledged Spark/medallion for owned batch pipelines and clarified why runtime normalization is kept in-path for benchmark-time cross-store detectability. | [reply](https://www.reddit.com/r/SQL/comments/1smzvar/comment/ogjbtak/) |
 | 2026-04-16 | Kirubel | r/SQL | Reply to Wise-Jury-4037 (joinability + 3+ sources) | Clarified joinability is explicit via per-entity contracts and that 3+ source joins are handled as staged, validated pairwise merges with visible correction on low-coverage/empty stages. | [reply](https://www.reddit.com/r/SQL/comments/1smzvar/comment/ogjvi04/) |
 
+| 2026-04-18| Meseret| r/learnmachinelearning |Your AI agent is matching words, not understanding questions| Reply from u/Cybyss -to pushback distinguishing general LLM paraphrase robustness from agent-layer wording sensitivity. Clarified that routing, schema interpretation, and context selection are the brittle layers — not the model itself. Referenced testing across llama-3.1-8b and larger OpenRouter models.|[reply](https://www.reddit.com/r/learnmachinelearning/comments/1sonxrg/comment/oguhcp8/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
+| 2026-04-18| Meseret| r/SQL| Post by u/Ambitious-Hornet-841: Cross-database join keys are a silent failure mode in multi-database agents: Cross-database join keys are a silent failure mode in multi-database agents | I replied-Reframed the problem as a data contract issue rather than a query problem. Recommended a dedicated join key resolver that runs before query generation and holds normalisation rules per entity type deterministically. Argued query layer is less painful than ETL only when resolution logic is explicit and outside the model. Added the distinction between "zero rows returned" and "query failed" as separate failure modes requiring different correction paths.| [reply](https://www.reddit.com/r/SQL/comments/1smzvar/comment/ogucszt/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 ---
 
 ## Community Intelligence
@@ -192,18 +195,18 @@ _External responses or findings that changed the team's technical approach._
 - **Discord engagement:** Cohort class group (1, first-mover help) + 3 servers joined (HF, EleutherAI, LlamaIndex)
 - **Slack engagement:** daily standup summary,sharing different resources related to the topics,daily update of what shipped,what stuck and future works.
 
-### Week 9 In-Progress Totals (as of 2026-04-15)
+### Week 9 (as of 2026-04-13-2026-04-18)
 - **X reply-placements (Apr 13):** 5 (one received reply from @matanzutta validating thesis)
 - **X Community posts (Apr 14):** 8 across 4 communities (AI Agents, ML, AI/Python/Data, Open Source). 2 received practitioner replies (@jcubic, @anandrishv).
 - **X Communities joined:** 4 (AI Agents 14.7K, ML, AI/Python/Data, Open Source Contributors)
+- **Second Linkedin Article Posted:**(Meseret:They are 21 reference documents that store verified knowledge so a model can retrieve and use them for better, more accurate responses.) 
 - **Medium articles published (Week 9):** 2 (Kirubel: Apr 14 + Apr 15)
-- **Reddit posts:** 3 (Kirubel: r/learnmachinelearning + r/LocalLLaMA; Meseret: r/learnmachinelearning)
+- **Reddit posts:** 4 (Kirubel: r/learnmachinelearning + r/LocalLLaMA; Meseret: r/learnmachinelearning+r/SQL)(April 14-April 18)
 - **Reddit replies (Apr 14-15, deployed by Kirubel as u/Far-Comparison-9745):** 7 substantive replies on r/LocalLLaMA + r/learnmachinelearning
 - **Reddit replies received from external practitioners:** 1 (u/This-You-2737 on join-failures post recommending Great Expectations + Scaylor Orchestrate)
 - **Discord:** 3 servers joined (HF, EleutherAI, LlamaIndex). 1 substantive HF #general practitioner exchange (5 messages, ~57 min) with user H$Go on cross-DB joins, MCP discovery, KB injection testing, Level 1 vs Level 2 failure framing.
-- **Linkedin Second article:** Meseret-in progress
 - **External validation logged:** 3 (@matanzutta thesis restatement Apr 13; u/This-You-2737 tooling exchange Apr 14; H$Go independently arrived at "fuzzy AI" matching = our Correction Layer pattern Apr 14)
-- **daily Google Standup meeting and Slack Engagement:**Daily discussion on the topics and issues we are facing.
+- **daily Google Standup meeting and Slack Engagement:**Daily discussion on the topics and issues we are facing and updates.
 ### Accounts Tracked for Reply-Threading
 
 | Account | Platform | Focus Area | Link |
