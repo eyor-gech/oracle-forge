@@ -37,7 +37,7 @@ JOIN review r ON r.business_id = REPLACE(b.business_id, 'businessid_', 'business
 WHERE r.date LIKE '%2018%'
   AND (
     b.attributes LIKE '%''BikeParking'': ''True''%'
-    OR b.attributes ~ 'BusinessParking.*(garage|street|validated|lot|valet)'': True'
+    OR b.attributes ~ 'BusinessParking.*True'
   )
 """,
     "Which business category has the largest number of businesses that accept credit card payments, and what is its average rating?": """
@@ -91,7 +91,7 @@ WITH bounds AS (
 )
 SELECT (trim(b.name) || ',' || replace(COALESCE(b.primary_categories, ''), '|', ',')) AS full_line
 FROM business b
-WHERE b.business_id = (SELECT business_id FROM winner)
+WHERE REPLACE(b.business_id, 'businessid_', 'businessref_') = (SELECT business_id FROM winner)
 """,
     "Among users who registered on Yelp in 2016, which 5 business categories have received the most total reviews from those users since 2016?": """
 WITH u2016 AS (

@@ -130,6 +130,9 @@ def join_records(
     if not left_rows or not right_rows:
         return []
     resolver = JoinKeyResolver()
+    compatible, strategy = resolver.check_key_compatibility(left_rows, right_rows, left_key, right_key, max_samples=10)
+    if not compatible:
+        raise ValueError("join_key_mismatch: incompatible join keys after normalization attempts")
     sample_left = next((row.get(left_key) for row in left_rows if row.get(left_key) is not None), None)
     sample_right = next((row.get(right_key) for row in right_rows if row.get(right_key) is not None), None)
     indexed: Dict[str, List[Dict[str, Any]]] = {}
@@ -140,7 +143,7 @@ def join_records(
             left_db_type=left_db,
             right_db_type=right_db,
         )
-        candidate = normalize_for_compare(right_norm)
+        candidate = resolver.normalize_for_strategy(right_norm, strategy)
         indexed.setdefault(candidate, []).append(row)
     merged: List[Dict[str, Any]] = []
     for row in left_rows:
@@ -150,7 +153,7 @@ def join_records(
             left_db_type=left_db,
             right_db_type=right_db,
         )
-        candidate = normalize_for_compare(left_norm)
+        candidate = resolver.normalize_for_strategy(left_norm, strategy)
         for partner in indexed.get(candidate, []):
             joined = dict(row)
             for key, value in partner.items():
@@ -197,7 +200,16 @@ def compute_metrics(records: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 def infer_join_key(rows: List[Dict[str, Any]]) -> Optional[str]:
-    candidates = ["customer_id", "subscriber_id", "business_id", "user_id", "patient_id", "provider_npi"]
+    candidates = [
+        "customer_id",
+        "subscriber_id",
+        "business_id",
+        "user_id",
+        "patient_id",
+        "provider_npi",
+        "book_id",
+        "purchase_id",
+    ]
     if not rows:
         return None
     keys = set(rows[0].keys())

@@ -1,0 +1,910 @@
+{
+  "dataset": "DataAgentBench stockmarket",
+  "dataset_path": "C:\\Users\\Eyor.G\\Documents\\Tenx\\oracle-forge\\oracle-forge\\DataAgentBench",
+  "evaluated_at_utc": "2026-04-18T19:22:57.988440+00:00",
+  "total_queries": 5,
+  "trials_per_query": 1,
+  "correct_first_answers": 0,
+  "correct_trials": 0,
+  "total_trials": 5,
+  "pass@1": 0.0,
+  "pass@1_ci95": [
+    0.0,
+    0.4345
+  ],
+  "overall_trial_accuracy": 0.0,
+  "db_binding_summary": {
+    "checks": 5,
+    "passed": 5,
+    "pass_rate": 1.0,
+    "verdict": "PASS"
+  },
+  "queries": [
+    {
+      "id": "query1",
+      "question": "What was the maximum adjusted closing price in 2020 for The RealReal, Inc.?",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 100 != 1",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 100,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAAU",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AADR",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAME",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAWW",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAXJ",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABEQ",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABMD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACAD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACES",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACIO",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns."
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 100, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAAU\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AADR\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAME\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAWW\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAXJ\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABEQ\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABMD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACAD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACES\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACIO\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns.\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "sqlite_sql_query",
+              "selection_reason": "SQLite selected by schema overlap with query entities/columns.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM stockinfo LIMIT 100",
+              "result_summary": "list(len=100)",
+              "duration_ms": 20,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "stockinfo_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "stockinfo_database",
+                  "db_type": "sqlite",
+                  "status": "success",
+                  "row_count": 100
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3930,
+            "completion_tokens": 1234,
+            "total_tokens": 5164,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "sqlite",
+              "reason": "SQLite selected by schema overlap with query entities/columns.",
+              "tool": "sqlite_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "sqlite"
+            ],
+            "expected_logical_databases": [
+              "stockinfo_database",
+              "stocktrade_database"
+            ],
+            "observed_logical_databases": [
+              "stockinfo_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query2",
+      "question": "List all ETF securities listed on NYSE Arca that reached an adjusted closing price above $200 at any point during 2015, and also report the total number of such ETFs.",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 1 != 32",
+          "status": "success",
+          "answer": "1",
+          "answer_text": "1",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "duckdb_sql_query",
+              "selection_reason": "DuckDB selected by schema overlap with analytics-oriented entities.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT 1 AS health_check",
+              "result_summary": "list(len=1)",
+              "duration_ms": 35,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "stocktrade_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "stocktrade_database",
+                  "db_type": "duckdb",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3953,
+            "completion_tokens": 120,
+            "total_tokens": 4073,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "duckdb",
+              "reason": "DuckDB selected by schema overlap with analytics-oriented entities.",
+              "tool": "duckdb_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "duckdb"
+            ],
+            "expected_logical_databases": [
+              "stockinfo_database",
+              "stocktrade_database"
+            ],
+            "observed_logical_databases": [
+              "stocktrade_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query3",
+      "question": "List all company names on the NASDAQ-listed Market that were financially troubled (delinquent, deficient, or both) and have trading volume in 2008, for each, report its exisiting non-null average daily trading volume in 2008.",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 100 != 40",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 100,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAAU",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AADR",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAME",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAWW",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAXJ",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABEQ",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABMD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACAD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACES",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACIO",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns."
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 100, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAAU\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AADR\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAME\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAWW\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAXJ\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABEQ\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABMD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACAD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACES\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACIO\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns.\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "sqlite_sql_query",
+              "selection_reason": "SQLite selected by schema overlap with query entities/columns.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM stockinfo LIMIT 100",
+              "result_summary": "list(len=100)",
+              "duration_ms": 28,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "stockinfo_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "stockinfo_database",
+                  "db_type": "sqlite",
+                  "status": "success",
+                  "row_count": 100
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3968,
+            "completion_tokens": 1234,
+            "total_tokens": 5202,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "sqlite",
+              "reason": "SQLite selected by schema overlap with query entities/columns.",
+              "tool": "sqlite_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "sqlite"
+            ],
+            "expected_logical_databases": [
+              "stockinfo_database",
+              "stocktrade_database"
+            ],
+            "observed_logical_databases": [
+              "stockinfo_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query4",
+      "question": "What are the names (not symbol) of the top 5 non-ETF stocks listed on the New York Stock Exchange (NYSE) that had more up days than down days in 2017? (Up days: closing price > opening price; Down days: closing price < opening price)",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 100 != 7",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 100,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAAU",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AADR",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAME",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAWW",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAXJ",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABEQ",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABMD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACAD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACES",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACIO",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns."
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 100, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAAU\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AADR\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAME\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAWW\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAXJ\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABEQ\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABMD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACAD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACES\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACIO\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns.\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "sqlite_sql_query",
+              "selection_reason": "SQLite selected by schema overlap with query entities/columns.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM stockinfo LIMIT 100",
+              "result_summary": "list(len=100)",
+              "duration_ms": 6,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "stockinfo_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "stockinfo_database",
+                  "db_type": "sqlite",
+                  "status": "success",
+                  "row_count": 100
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3970,
+            "completion_tokens": 1234,
+            "total_tokens": 5204,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "sqlite",
+              "reason": "SQLite selected by schema overlap with query entities/columns.",
+              "tool": "sqlite_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "sqlite"
+            ],
+            "expected_logical_databases": [
+              "stockinfo_database",
+              "stocktrade_database"
+            ],
+            "observed_logical_databases": [
+              "stockinfo_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query5",
+      "question": "Which 5 companies listed on the NASDAQ Capital Market had the highest number of days in 2019 where the intraday price range exceeded 20% of the low price, list the company names please?",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 100 != 9",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 100,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAAU",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AADR",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAME",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAWW",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "AAXJ",
+                "Listing Exchange": "Q",
+                "Market Category": "G",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABEQ",
+                "Listing Exchange": "P",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ABMD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACAD",
+                "Listing Exchange": "Q",
+                "Market Category": "Q",
+                "ETF": "N",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "N",
+                "NextShares": "N",
+                "Company Description": "ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACES",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future."
+              },
+              {
+                "Nasdaq Traded": "Y",
+                "Symbol": "ACIO",
+                "Listing Exchange": "Z",
+                "Market Category": "Not applicable or not NASDAQ-listed",
+                "ETF": "Y",
+                "Round Lot Size": "100.0",
+                "Test Issue": "N",
+                "Financial Status": "None",
+                "NextShares": "N",
+                "Company Description": "ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns."
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 100, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAAU\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Perth Mint Physical Gold ETF offers investors an opportunity to buy shares backed by physical gold, providing a secure and tangible way to invest in precious metals.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AADR\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"AdvisorShares Dorsey Wright ADR ETF offers investors a dynamic way to access international markets through a diverse portfolio of American Depositary Receipts, leveraging the expertise of Dorsey Wright's investment strategies.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAME\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlantic American Corporation provides a range of insurance products, specializing in life, health, and property insurance to meet diverse customer needs.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAWW\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"Atlas Air Worldwide Holdings specializes in providing air cargo and passenger charter services, playing a crucial role in global logistics and transportation.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"AAXJ\", \"Listing Exchange\": \"Q\", \"Market Category\": \"G\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"iShares MSCI All Country Asia ex Japan Index Fund offers investors a unique opportunity to gain exposure to a diverse portfolio of companies across Asia, excluding Japan, through a well-managed exchange-traded fund.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABEQ\", \"Listing Exchange\": \"P\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"Absolute Core Strategy ETF is an investment fund designed to offer a diversified portfolio, focusing on strategic asset allocation to optimize returns for investors.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ABMD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ABIOMED, Inc. specializes in developing advanced heart pumps to assist patients with severe cardiac conditions, playing a crucial role in modern cardiovascular care.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACAD\", \"Listing Exchange\": \"Q\", \"Market Category\": \"Q\", \"ETF\": \"N\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"N\", \"NextShares\": \"N\", \"Company Description\": \"ACADIA Pharmaceuticals Inc. is dedicated to developing treatments that improve the lives of patients with central nervous system disorders, focusing on innovative solutions for conditions like Parkinson's disease and schizophrenia.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACES\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ALPS Clean Energy ETF provides investors with access to a diverse portfolio of companies focused on renewable energy solutions, supporting the transition to a cleaner and more sustainable future.\"}, {\"Nasdaq Traded\": \"Y\", \"Symbol\": \"ACIO\", \"Listing Exchange\": \"Z\", \"Market Category\": \"Not applicable or not NASDAQ-listed\", \"ETF\": \"Y\", \"Round Lot Size\": \"100.0\", \"Test Issue\": \"N\", \"Financial Status\": \"None\", \"NextShares\": \"N\", \"Company Description\": \"ETF Series Solutions Aptus Collared Income Opportunity ETF specializes in providing investors with a strategic approach to generating income through a unique blend of options strategies and equity investments, aimed at minimizing risk while maximizing potential returns.\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "sqlite_sql_query",
+              "selection_reason": "SQLite selected by schema overlap with query entities/columns.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM stockinfo LIMIT 100",
+              "result_summary": "list(len=100)",
+              "duration_ms": 6,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "stockinfo_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "stockinfo_database",
+                  "db_type": "sqlite",
+                  "status": "success",
+                  "row_count": 100
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3958,
+            "completion_tokens": 1234,
+            "total_tokens": 5192,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "sqlite",
+              "reason": "SQLite selected by schema overlap with query entities/columns.",
+              "tool": "sqlite_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "sqlite"
+            ],
+            "expected_logical_databases": [
+              "stockinfo_database",
+              "stocktrade_database"
+            ],
+            "observed_logical_databases": [
+              "stockinfo_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    }
+  ]
+}

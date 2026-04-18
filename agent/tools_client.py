@@ -5,6 +5,8 @@ import os
 import time
 from typing import Any, Dict, List, Optional
 import uuid
+from pathlib import Path
+import sys
 
 import httpx
 
@@ -18,7 +20,9 @@ class MCPToolsClient:
         mock_mode: bool = False,
         allow_fallback_to_mock: bool = False,
         timeout_seconds: int = 12,
+        local_db_config_path: Optional[str] = None,
     ) -> None:
+        self._ensure_dataagentbench_import_path()
         self.base_url = base_url.rstrip("/")
         self.mock_mode = mock_mode
         self.allow_fallback_to_mock = allow_fallback_to_mock
@@ -27,8 +31,31 @@ class MCPToolsClient:
         self.server_reachable = False
         self.duckdb_path = os.getenv("DUCKDB_PATH", "").strip()
         self.client = httpx.Client(timeout=self.timeout_seconds)
+        self.local_db_config_path = local_db_config_path
+        self.local_db_clients: Dict[str, Dict[str, Any]] = {}
+        self.local_dab_mode = False
+        if self.local_db_config_path:
+            config_path = Path(self.local_db_config_path)
+            if config_path.exists():
+                self.local_db_clients = self._load_local_db_clients(config_path)
+                self.local_dab_mode = bool(self.local_db_clients)
+                if self.local_dab_mode:
+                    self._prepare_local_datastores()
+
+    @staticmethod
+    def _ensure_dataagentbench_import_path() -> None:
+        repo_root = Path(__file__).resolve().parents[1]
+        dab_root = repo_root / "DataAgentBench"
+        if dab_root.exists():
+            dab_path = str(dab_root)
+            if dab_path not in sys.path:
+                sys.path.insert(0, dab_path)
 
     def discover_tools(self) -> List[Dict[str, Any]]:
+        if self.local_dab_mode:
+            self.discovered_tools = self._local_tools_catalog()
+            self.server_reachable = True
+            return self.discovered_tools
         if self.mock_mode:
             self.discovered_tools = self._mock_tools_catalog()
             return self.discovered_tools
@@ -68,6 +95,8 @@ class MCPToolsClient:
                 ) from exc
 
     def get_schema_metadata(self) -> Dict[str, Any]:
+        if self.local_dab_mode:
+            return self._local_schema_metadata()
         if self.mock_mode:
             return self._mock_schema_metadata()
         if not self.discovered_tools:
@@ -97,6 +126,43 @@ class MCPToolsClient:
         bootstrap = self._bootstrap_schema_metadata()
         self._merge_schema_metadata(metadata, bootstrap)
         return metadata
+
+    def list_db(self) -> List[str]:
+        """List discovered databases from tools metadata and schema bootstrap."""
+        if self.local_dab_mode:
+            dbs = []
+            for db_client in self.local_db_clients.values():
+                db_name = canonical_db_name(str(db_client.get("db_type", "")))
+                if db_name and db_name not in dbs:
+                    dbs.append(db_name)
+            return dbs
+        dbs: List[str] = []
+        if not self.discovered_tools:
+            self.discover_tools()
+        for tool in self.discovered_tools:
+            name = str(tool.get("name", "")).lower()
+            for candidate in ["postgresql", "mongodb", "sqlite", "duckdb"]:
+                if candidate in name and candidate not in dbs:
+                    dbs.append(candidate)
+            if "postgres" in name and "postgresql" not in dbs:
+                dbs.append("postgresql")
+            if "mongo" in name and "mongodb" not in dbs:
+                dbs.append("mongodb")
+        metadata = self.get_schema_metadata()
+        for db in metadata.keys():
+            normalized = canonical_db_name(db)
+            if normalized and normalized not in dbs:
+                dbs.append(normalized)
+        return dbs
+
+    def describe_tables(self, database: str) -> Dict[str, Any]:
+        """Return table/collection descriptors for one database."""
+        db = canonical_db_name(database)
+        metadata = self.get_schema_metadata()
+        payload = metadata.get(db, {})
+        if isinstance(payload, dict):
+            return payload
+        return {"tables": [], "collections": []}
 
     def select_tool(self, database: str, dialect: str) -> Optional[str]:
         if not self.discovered_tools:
@@ -213,6 +279,8 @@ class MCPToolsClient:
                 "duration_ms": duration_ms,
                 "success": bool(response.get("ok")),
                 "failure_type": None if response.get("ok") else classify_failure(response.get("error", ""), payload),
+                "logical_db_targets": response.get("logical_db_targets", []),
+                "local_execution_trace": response.get("local_execution_trace", []),
             }
         )
         if response.get("ok"):
@@ -227,6 +295,8 @@ class MCPToolsClient:
         }
 
     def _invoke_live(self, tool_name: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        if self.local_dab_mode:
+            return self._invoke_local_dab_tool(tool_name, payload)
         if tool_name == "local_duckdb_sql_query":
             return self._invoke_local_duckdb(payload)
 
@@ -529,6 +599,284 @@ class MCPToolsClient:
             if isinstance(parsed, dict):
                 return [parsed]
         return []
+
+    def _load_local_db_clients(self, config_path: Path) -> Dict[str, Dict[str, Any]]:
+        try:
+            from common_scaffold.tools.db_utils.db_config import load_db_clients  # type: ignore
+            clients = load_db_clients(str(config_path))
+            return clients if isinstance(clients, dict) else {}
+        except Exception:
+            return {}
+
+    def _local_tools_catalog(self) -> List[Dict[str, Any]]:
+        db_types = {
+            canonical_db_name(str(client.get("db_type", "")))
+            for client in self.local_db_clients.values()
+            if client.get("_available", True)
+        }
+        tools: List[Dict[str, Any]] = []
+        if "postgresql" in db_types:
+            tools.append({"name": "postgres_sql_query", "description": "Local DAB PostgreSQL SQL execution"})
+        if "sqlite" in db_types:
+            tools.append({"name": "sqlite_sql_query", "description": "Local DAB SQLite SQL execution"})
+        if "duckdb" in db_types:
+            tools.append({"name": "duckdb_sql_query", "description": "Local DAB DuckDB SQL execution"})
+        if "mongodb" in db_types:
+            tools.append({"name": "mongodb_aggregate_local", "description": "Local DAB MongoDB aggregation execution"})
+        return tools
+
+    def _prepare_local_datastores(self) -> None:
+        for _, client in self.local_db_clients.items():
+            db_type = canonical_db_name(str(client.get("db_type", "")))
+            if db_type == "postgresql":
+                self._ensure_local_postgres_loaded(client)
+            elif db_type == "mongodb":
+                self._ensure_local_mongo_loaded(client)
+
+    def _ensure_local_postgres_loaded(self, db_client: Dict[str, Any]) -> None:
+        db_name = str(db_client.get("db_name", "")).strip()
+        sql_file = str(db_client.get("sql_file", "")).strip()
+        if not db_name or not sql_file:
+            return
+        try:
+            from common_scaffold.tools.db_utils import postgres_utils  # type: ignore
+            if not postgres_utils.check_db_exists(db_name):
+                postgres_utils.load_db(sql_file, db_name)
+        except Exception:
+            return
+
+    def _ensure_local_mongo_loaded(self, db_client: Dict[str, Any]) -> None:
+        db_name = str(db_client.get("db_name", "")).strip()
+        dump_folder = str(db_client.get("dump_folder", "")).strip()
+        if not db_name or not dump_folder:
+            return
+        try:
+            from common_scaffold.tools.db_utils import mongo_utils  # type: ignore
+            if not mongo_utils.check_db_exists(db_name):
+                mongo_utils.load_db(dump_folder, db_name)
+        except Exception:
+            return
+
+    def _local_clients_for_db(self, db: str) -> List[tuple[str, Dict[str, Any]]]:
+        target = canonical_db_name(db)
+        out: List[tuple[str, Dict[str, Any]]] = []
+        for logical_name, client in self.local_db_clients.items():
+            if not client.get("_available", True):
+                continue
+            if canonical_db_name(str(client.get("db_type", ""))) == target:
+                out.append((logical_name, client))
+        return out
+
+    def _local_schema_metadata(self) -> Dict[str, Any]:
+        metadata: Dict[str, Any] = {}
+        for db in ["postgresql", "sqlite", "duckdb", "mongodb"]:
+            clients = self._local_clients_for_db(db)
+            if not clients:
+                continue
+            metadata.setdefault(db, {"tables": [], "collections": []})
+            if db == "mongodb":
+                for _, client in clients:
+                    collections = self._local_list_collections(client)
+                    for name in collections:
+                        entry = {"name": name}
+                        if entry not in metadata[db]["collections"]:
+                            metadata[db]["collections"].append(entry)
+                continue
+
+            for _, client in clients:
+                tables = self._local_list_tables(db, client)
+                for name in tables:
+                    entry = {"name": name}
+                    if entry not in metadata[db]["tables"]:
+                        metadata[db]["tables"].append(entry)
+        return metadata
+
+    def _local_list_tables(self, db: str, db_client: Dict[str, Any]) -> List[str]:
+        try:
+            if db == "sqlite":
+                from common_scaffold.tools.db_utils import sqlite_utils  # type: ignore
+                args = sqlite_utils.SqliteListDBTool.check_args(db_client)
+                return sqlite_utils.SqliteListDBTool.exec(**args)
+            if db == "duckdb":
+                from common_scaffold.tools.db_utils import duckdb_utils  # type: ignore
+                args = duckdb_utils.DuckdbListDBTool.check_args(db_client)
+                return duckdb_utils.DuckdbListDBTool.exec(**args)
+            if db == "postgresql":
+                from common_scaffold.tools.db_utils import postgres_utils  # type: ignore
+                args = postgres_utils.PostgresListDBTool.check_args(db_client)
+                return postgres_utils.PostgresListDBTool.exec(**args)
+        except Exception:
+            return []
+        return []
+
+    def _local_list_collections(self, db_client: Dict[str, Any]) -> List[str]:
+        try:
+            from common_scaffold.tools.db_utils import mongo_utils  # type: ignore
+            args = mongo_utils.MongoListDBTool.check_args(db_client)
+            return mongo_utils.MongoListDBTool.exec(**args)
+        except Exception:
+            return []
+
+    def _invoke_local_dab_tool(self, tool_name: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        name = str(tool_name).lower()
+        if "mongo" in name:
+            return self._local_mongo_query(payload)
+        if "postgres" in name:
+            return self._local_sql_query("postgresql", payload)
+        if "sqlite" in name:
+            return self._local_sql_query("sqlite", payload)
+        if "duckdb" in name:
+            return self._local_sql_query("duckdb", payload)
+        return {"ok": False, "error": f"Unsupported local tool: {tool_name}"}
+
+    def _local_sql_query(self, db: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        sql = str(payload.get("sql", "")).strip()
+        if not sql:
+            return {"ok": False, "error": "Missing SQL payload."}
+        clients = self._local_clients_for_db(db)
+        if not clients:
+            return {"ok": False, "error": f"No local clients configured for {db}."}
+
+        merged: List[Dict[str, Any]] = []
+        exec_trace: List[Dict[str, Any]] = []
+        successes = 0
+        errors: List[str] = []
+
+        for logical_name, db_client in clients:
+            try:
+                if db == "sqlite":
+                    from common_scaffold.tools.db_utils import sqlite_utils  # type: ignore
+                    args = sqlite_utils.SqliteQueryDBTool.check_args(db_client, sql)
+                    rows = sqlite_utils.SqliteQueryDBTool.exec(**args)
+                elif db == "duckdb":
+                    from common_scaffold.tools.db_utils import duckdb_utils  # type: ignore
+                    args = duckdb_utils.DuckdbQueryDBTool.check_args(db_client, sql)
+                    rows = duckdb_utils.DuckdbQueryDBTool.exec(**args)
+                else:
+                    from common_scaffold.tools.db_utils import postgres_utils  # type: ignore
+                    args = postgres_utils.PostgresQueryDBTool.check_args(db_client, sql)
+                    rows = postgres_utils.PostgresQueryDBTool.exec(**args)
+
+                successes += 1
+                if isinstance(rows, list):
+                    merged.extend(item for item in rows if isinstance(item, dict))
+                elif isinstance(rows, dict):
+                    merged.append(rows)
+                exec_trace.append(
+                    {
+                        "logical_db": logical_name,
+                        "db_type": db,
+                        "status": "success",
+                        "row_count": len(rows) if isinstance(rows, list) else (1 if isinstance(rows, dict) else 0),
+                    }
+                )
+            except Exception as exc:
+                errors.append(f"{logical_name}: {exc}")
+                exec_trace.append(
+                    {
+                        "logical_db": logical_name,
+                        "db_type": db,
+                        "status": "error",
+                        "error": str(exc),
+                    }
+                )
+
+        if successes == 0:
+            return {
+                "ok": False,
+                "error": " | ".join(errors) if errors else f"All local {db} clients failed.",
+                "logical_db_targets": [name for name, _ in clients],
+                "local_execution_trace": exec_trace,
+            }
+        return {
+            "ok": True,
+            "data": merged,
+            "logical_db_targets": [name for name, _ in clients],
+            "local_execution_trace": exec_trace,
+        }
+
+    def _local_mongo_query(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+        clients = self._local_clients_for_db("mongodb")
+        if not clients:
+            return {"ok": False, "error": "No local MongoDB clients configured."}
+
+        collection = str(payload.get("collection", "")).strip()
+        pipeline = payload.get("pipeline", [])
+        if isinstance(pipeline, str):
+            try:
+                pipeline = json.loads(pipeline)
+            except Exception:
+                pipeline = []
+        if not isinstance(pipeline, list):
+            return {"ok": False, "error": "Mongo payload requires list `pipeline`."}
+
+        merged: List[Dict[str, Any]] = []
+        exec_trace: List[Dict[str, Any]] = []
+        successes = 0
+        errors: List[str] = []
+
+        try:
+            from pymongo import MongoClient  # type: ignore
+            from common_scaffold.tools.db_utils import db_config as dab_db_config  # type: ignore
+        except Exception as exc:
+            return {"ok": False, "error": f"Mongo dependencies unavailable: {exc}"}
+
+        mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+        for logical_name, db_client in clients:
+            db_name = str(db_client.get("db_name", "")).strip()
+            if not db_name:
+                continue
+            try:
+                with MongoClient(mongo_uri) as mongo_client:
+                    db = mongo_client[db_name]
+                    target_collection = collection
+                    if not target_collection:
+                        names = db.list_collection_names()
+                        if not names:
+                            raise ValueError("No collections found.")
+                        target_collection = names[0]
+                    if target_collection not in db.list_collection_names():
+                        raise ValueError(f"Collection does not exist: {target_collection}")
+                    rows = list(db[target_collection].aggregate(pipeline))
+                    serialized = dab_db_config.serialize(rows)
+                    if isinstance(serialized, list):
+                        merged.extend(item for item in serialized if isinstance(item, dict))
+                    elif isinstance(serialized, dict):
+                        merged.append(serialized)
+                    successes += 1
+                    exec_trace.append(
+                        {
+                            "logical_db": logical_name,
+                            "db_type": "mongodb",
+                            "status": "success",
+                            "collection": target_collection,
+                            "row_count": len(serialized) if isinstance(serialized, list) else 1,
+                        }
+                    )
+            except Exception as exc:
+                errors.append(f"{logical_name}: {exc}")
+                exec_trace.append(
+                    {
+                        "logical_db": logical_name,
+                        "db_type": "mongodb",
+                        "status": "error",
+                        "error": str(exc),
+                    }
+                )
+
+        if successes == 0:
+            return {
+                "ok": False,
+                "error": " | ".join(errors) if errors else "All local MongoDB clients failed.",
+                "logical_db_targets": [name for name, _ in clients],
+                "local_execution_trace": exec_trace,
+            }
+        return {
+            "ok": True,
+            "data": merged,
+            "logical_db_targets": [name for name, _ in clients],
+            "local_execution_trace": exec_trace,
+        }
 
     def _mock_tools_catalog(self) -> List[Dict[str, Any]]:
         return [

@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from agent.main import run_agent
-from agent.utils import wilson_interval
+from eval.metrics import wilson_ci
 
 
 def _normalize_scalar(value: Any) -> Any:
@@ -47,7 +47,19 @@ class DABEvaluator:
             payload = json.load(handle)
         if isinstance(payload, dict):
             queries = payload.get("queries", [])
-            return queries if isinstance(queries, list) else []
+            if isinstance(queries, list):
+                return queries
+            categorized: List[Dict[str, Any]] = []
+            for category in ["dialect", "join", "unstructured", "domain"]:
+                items = payload.get(category, [])
+                if not isinstance(items, list):
+                    continue
+                for item in items:
+                    if isinstance(item, dict):
+                        copy_item = dict(item)
+                        copy_item.setdefault("category", category)
+                        categorized.append(copy_item)
+            return categorized
         return payload if isinstance(payload, list) else []
 
     def evaluate(self) -> Dict[str, Any]:
@@ -97,7 +109,7 @@ class DABEvaluator:
             )
         total_queries = len(self.dataset)
         pass_at_1 = pass1_count / total_queries if total_queries else 0.0
-        ci_low, ci_high = wilson_interval(pass1_count, total_queries)
+        ci_low, ci_high = wilson_ci(pass1_count, total_queries)
         overall_trial_accuracy = total_trial_correct / total_trials if total_trials else 0.0
         return {
             "dataset_path": str(self.dataset_path),

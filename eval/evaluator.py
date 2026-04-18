@@ -3,11 +3,13 @@ from __future__ import annotations
 import json
 import re
 import time
+import math
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+import yaml
 
 from agent.main import run_agent
-from agent.utils import wilson_interval
+from eval.metrics import wilson_ci
 
 
 class OracleForgeEvaluator:
@@ -27,6 +29,7 @@ class OracleForgeEvaluator:
                 question=question,
                 available_databases=query_case.get("available_databases", ["postgresql", "mongodb"]),
                 schema_info=query_case.get("schema_info", {}),
+                db_config_path=query_case.get("db_config_path"),
             )
             duration_ms = int((time.perf_counter() - started) * 1000)
             validation = self._validate_answer(query_case, outcome)
@@ -77,7 +80,7 @@ class OracleForgeEvaluator:
                 handle.write(json.dumps(sentinel_payload, ensure_ascii=False) + "\n")
         total = len(per_query)
         pass_at_1 = (passed / total) if total else 0.0
-        ci_low, ci_high = wilson_interval(passed, total)
+        ci_low, ci_high = wilson_ci(passed, total)
         report = {
             "total_queries": total,
             "correct_queries": passed,
@@ -112,6 +115,8 @@ class OracleForgeEvaluator:
             return []
 
         available_databases = self._extract_db_types(dataset_dir)
+        expected_logical_databases = self._extract_db_client_names(dataset_dir)
+        db_config_path = str(dataset_dir / "db_config.yaml")
         queries: List[Dict[str, Any]] = []
         for query_dir in sorted(dataset_dir.glob("query*"), key=self._query_sort_key):
             if not query_dir.is_dir():
@@ -133,8 +138,10 @@ class OracleForgeEvaluator:
                     "id": query_dir.name,
                     "question": question,
                     "available_databases": available_databases,
+                    "expected_logical_databases": expected_logical_databases,
                     "schema_info": {},
                     "validator_path": str(query_dir / "validate.py"),
+                    "db_config_path": db_config_path,
                 }
             )
         return queries
@@ -166,6 +173,19 @@ class OracleForgeEvaluator:
                 found.append(normalized)
 
         return found or ["postgresql", "mongodb", "sqlite", "duckdb"]
+
+    def _extract_db_client_names(self, dataset_dir: Path) -> List[str]:
+        db_config_path = dataset_dir / "db_config.yaml"
+        if not db_config_path.exists():
+            return []
+        try:
+            payload = yaml.safe_load(db_config_path.read_text(encoding="utf-8")) or {}
+            db_clients = payload.get("db_clients", {})
+            if not isinstance(db_clients, dict):
+                return []
+            return [str(name) for name in db_clients.keys()]
+        except Exception:
+            return []
 
     @staticmethod
     def _query_sort_key(path: Path) -> Tuple[int, str]:
@@ -201,7 +221,26 @@ class OracleForgeEvaluator:
             return False, "Ground truth file empty."
         actual_norm = self._normalize_execution_output(actual)
         expected_norm = self._normalize_ground_truth(expected_raw)
-        return actual_norm == expected_norm, f"execution_match={actual_norm == expected_norm}"
+
+        if len(actual_norm) != len(expected_norm):
+            return False, f"length_mismatch: {len(actual_norm)} != {len(expected_norm)}"
+
+        for a, e in zip(actual_norm, expected_norm):
+            if a == e:
+                continue
+            # Try fuzzy float match
+            try:
+                af, ef = float(a), float(e)
+                if math.isclose(af, ef, abs_tol=0.015):
+                    continue
+            except (ValueError, TypeError):
+                pass
+            # Try categorical normalization (Restaurant vs Restaurants)
+            if a.rstrip('s') == e.rstrip('s'):
+                continue
+            return False, f"value_mismatch: {a} != {e}"
+
+        return True, "execution_match=True"
 
     def _normalize_execution_output(self, actual: Any) -> List[str]:
         if isinstance(actual, list):

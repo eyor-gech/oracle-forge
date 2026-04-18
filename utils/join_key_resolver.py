@@ -199,3 +199,36 @@ class JoinKeyResolver:
     ) -> tuple[Any, Any]:
         """Apply a chain of strategies to both keys."""
         return self.resolve_chain(key1, strategies), self.resolve_chain(key2, strategies)
+
+    def check_key_compatibility(
+        self,
+        left_rows: List[Dict[str, Any]],
+        right_rows: List[Dict[str, Any]],
+        left_key: str,
+        right_key: str,
+        max_samples: int = 10,
+    ) -> tuple[bool, str]:
+        """Sample join keys and test compatibility with bounded normalization attempts."""
+        left_vals = [row.get(left_key) for row in left_rows[:max_samples] if isinstance(row, dict) and row.get(left_key) is not None]
+        right_vals = [row.get(right_key) for row in right_rows[:max_samples] if isinstance(row, dict) and row.get(right_key) is not None]
+        if not left_vals or not right_vals:
+            return False, "no_join_samples"
+
+        for strategy in ["default", "string_cast", "prefix_strip"]:
+            left_norm = {self.normalize_for_strategy(value, strategy) for value in left_vals}
+            right_norm = {self.normalize_for_strategy(value, strategy) for value in right_vals}
+            if left_norm & right_norm:
+                return True, strategy
+        return False, "incompatible_keys"
+
+    def normalize_for_strategy(self, value: Any, strategy: str) -> str:
+        text = str(value).strip()
+        if strategy == "string_cast":
+            try:
+                return str(int(float(text)))
+            except Exception:
+                return text.lower()
+        if strategy == "prefix_strip":
+            stripped = re.sub(r"^[A-Za-z]+[_-]?", "", text)
+            return stripped.lower()
+        return self._normalize_default(text)

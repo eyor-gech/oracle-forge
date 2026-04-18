@@ -1,0 +1,648 @@
+{
+  "dataset": "DataAgentBench googlelocal",
+  "dataset_path": "C:\\Users\\Eyor.G\\Documents\\Tenx\\oracle-forge\\oracle-forge\\DataAgentBench",
+  "evaluated_at_utc": "2026-04-18T19:29:27.555500+00:00",
+  "total_queries": 4,
+  "trials_per_query": 1,
+  "correct_first_answers": 0,
+  "correct_trials": 0,
+  "total_trials": 4,
+  "pass@1": 0.0,
+  "pass@1_ci95": [
+    0.0,
+    0.4899
+  ],
+  "overall_trial_accuracy": 0.0,
+  "db_binding_summary": {
+    "checks": 4,
+    "passed": 4,
+    "pass_rate": 1.0,
+    "verdict": "PASS"
+  },
+  "queries": [
+    {
+      "id": "query1",
+      "question": "What are the top 5 businesses located in Los Angeles, California, ranked by highest average rating in descending order?",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 70 != 10",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 79,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "name": "City Textile",
+                "gmap_id": "gmap_44",
+                "description": " Located in Los Angeles, CA 90023, this company specializes in the international trade of high-quality fabrics and materials.",
+                "num_of_reviews": "6",
+                "hours": "nan",
+                "MISC": "nan",
+                "state": "Open now"
+              },
+              {
+                "name": "San Soo Dang",
+                "gmap_id": "gmap_41",
+                "description": " This vibrant eatery in Los Angeles, CA 90005 offers a delightful array of traditional dishes and barbecue specialties inspired by the rich flavors of Korean cuisine.",
+                "num_of_reviews": "18",
+                "hours": "[[\"Thursday\", \"6:30AM–6PM\"], [\"Friday\", \"6:30AM–6PM\"], [\"Saturday\", \"6:30AM–6PM\"], [\"Sunday\", \"7AM–12PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"6:30AM–6PM\"], [\"Wednesday\", \"6:30AM–6PM\"]]",
+                "MISC": "{\"Service options\": [\"Takeout\", \"Dine-in\", \"Delivery\"], \"Accessibility\": [\"Wheelchair accessible entrance\"], \"Offerings\": [\"Comfort food\"], \"Amenities\": [\"Good for kids\"], \"Atmosphere\": [\"Casual\"]}",
+                "state": "Open ⋅ Closes 6PM"
+              },
+              {
+                "name": "Nova Fabrics",
+                "gmap_id": "gmap_43",
+                "description": " Discover a vibrant selection of textiles and materials for all your crafting and sewing needs in Los Angeles, CA 90021.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"9AM–5PM\"], [\"Friday\", \"9AM–5PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"9AM–5PM\"], [\"Tuesday\", \"9AM–5PM\"], [\"Wednesday\", \"9AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"In-store shopping\"], \"Payments\": [\"Checks\", \"Debit cards\", \"Credit cards\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Nobel Textile Co",
+                "gmap_id": "gmap_38",
+                "description": " This vibrant shop in Los Angeles, CA 90021 offers a diverse selection of textiles and sewing supplies for all your creative projects.",
+                "num_of_reviews": "7",
+                "hours": "[[\"Thursday\", \"9AM–5PM\"], [\"Friday\", \"9AM–5PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"9AM–5PM\"], [\"Tuesday\", \"9AM–5PM\"], [\"Wednesday\", \"9AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"In-store pickup\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Matrix International Textiles",
+                "gmap_id": "gmap_45",
+                "description": " This vibrant shop in Commerce, CA 90023 offers a wide selection of textiles and sewing materials for all your crafting needs.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"8:30AM–5:30PM\"], [\"Friday\", \"8:30AM–5:30PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"8:30AM–5:30PM\"], [\"Tuesday\", \"8:30AM–5:30PM\"], [\"Wednesday\", \"8:30AM–5:30PM\"]]",
+                "MISC": "{\"Accessibility\": [\"Wheelchair accessible entrance\"]}",
+                "state": "Open ⋅ Closes 5:30PM"
+              },
+              {
+                "name": "Vons Chicken",
+                "gmap_id": "gmap_74",
+                "description": " This inviting eatery in La Mirada, CA 90638 serves a diverse menu of delicious dishes, perfect for casual dining and family gatherings.",
+                "num_of_reviews": "18",
+                "hours": "[[\"Thursday\", \"11AM–9:30PM\"], [\"Friday\", \"11AM–9:30PM\"], [\"Saturday\", \"11AM–9:30PM\"], [\"Sunday\", \"11AM–9:30PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"11AM–9:30PM\"], [\"Wednesday\", \"11AM–9:30PM\"]]",
+                "MISC": "{\"Service options\": [\"Outdoor seating\", \"Curbside pickup\", \"No-contact delivery\", \"Delivery\", \"Takeout\", \"Dine-in\"], \"Health & safety\": [\"Mask required\", \"Staff wear masks\", \"Staff required to disinfect surfaces between visits\"], \"Popular for\": [\"Lunch\", \"Dinner\", \"Solo dining\"], \"Accessibility\": [\"Wheelchair accessible entrance\"], \"Offerings\": [\"Comfort food\", \"Quick bite\", \"Small plates\"], \"Dining options\": [\"Lunch\", \"Dinner\"], \"Amenities\": [\"Good for kids\"], \"Atmosphere\": [\"Casual\"], \"Crowd\": [\"College students\"]}",
+                "state": "Open ⋅ Closes 9:30PM"
+              },
+              {
+                "name": "Black Tie Ski Rental Delivery of Mammoth",
+                "gmap_id": "gmap_17",
+                "description": " Offering a wide selection of winter sports equipment for hire, this service in Mammoth Lakes, CA 93546 ensures you’re fully equipped for an unforgettable day on the slopes.",
+                "num_of_reviews": "34",
+                "hours": "[[\"Thursday\", \"8AM–5PM\"], [\"Friday\", \"8AM–5PM\"], [\"Saturday\", \"8AM–5PM\"], [\"Sunday\", \"8AM–5PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"Closed\"], [\"Wednesday\", \"Closed\"]]",
+                "MISC": "{\"Accessibility\": [\"Wheelchair accessible entrance\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Angel-A Massage",
+                "gmap_id": "gmap_22",
+                "description": " Experience relaxation and rejuvenation at this wellness retreat in Fair Oaks, CA 95628, where skilled therapists offer soothing treatments designed to relieve stress and promote overall well-being.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"9:30AM–9:30PM\"], [\"Friday\", \"9:30AM–9:30PM\"], [\"Saturday\", \"9:30AM–9:30PM\"], [\"Sunday\", \"10AM–8PM\"], [\"Monday\", \"10AM–9:30PM\"], [\"Tuesday\", \"10AM–9:30PM\"], [\"Wednesday\", \"9:30AM–9:30PM\"]]",
+                "MISC": "nan",
+                "state": "Open ⋅ Closes 9:30PM"
+              },
+              {
+                "name": "Dunn-Edwards Paints",
+                "gmap_id": "gmap_29",
+                "description": "Chain selling interior & exterior paints, primers & finishes, plus supplies. This vibrant shop in Roseville, CA 95661 offers a wide variety of high-quality coatings and supplies for all your home improvement and artistic needs.",
+                "num_of_reviews": "26",
+                "hours": "[[\"Thursday\", \"6:30AM–5PM\"], [\"Friday\", \"6:30AM–5PM\"], [\"Saturday\", \"7AM–3PM\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"6:30AM–5PM\"], [\"Tuesday\", \"6:30AM–5PM\"], [\"Wednesday\", \"6:30AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"Curbside pickup\", \"In-store pickup\", \"In-store shopping\", \"Same-day delivery\"], \"Accessibility\": [\"Wheelchair accessible entrance\", \"Wheelchair accessible parking lot\"], \"Offerings\": [\"Service guarantee\"], \"Planning\": [\"Quick visit\"], \"Payments\": [\"Checks\", \"Debit cards\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Elite Massage",
+                "gmap_id": "gmap_25",
+                "description": " Located in Fair Oaks, CA 95628, this wellness studio offers expert bodywork services designed to promote relaxation and alleviate tension.",
+                "num_of_reviews": "1",
+                "hours": "nan",
+                "MISC": "nan",
+                "state": "nan"
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 79, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"name\": \"City Textile\", \"gmap_id\": \"gmap_44\", \"description\": \" Located in Los Angeles, CA 90023, this company specializes in the international trade of high-quality fabrics and materials.\", \"num_of_reviews\": \"6\", \"hours\": \"nan\", \"MISC\": \"nan\", \"state\": \"Open now\"}, {\"name\": \"San Soo Dang\", \"gmap_id\": \"gmap_41\", \"description\": \" This vibrant eatery in Los Angeles, CA 90005 offers a delightful array of traditional dishes and barbecue specialties inspired by the rich flavors of Korean cuisine.\", \"num_of_reviews\": \"18\", \"hours\": \"[[\\\"Thursday\\\", \\\"6:30AM–6PM\\\"], [\\\"Friday\\\", \\\"6:30AM–6PM\\\"], [\\\"Saturday\\\", \\\"6:30AM–6PM\\\"], [\\\"Sunday\\\", \\\"7AM–12PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"6:30AM–6PM\\\"], [\\\"Wednesday\\\", \\\"6:30AM–6PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Takeout\\\", \\\"Dine-in\\\", \\\"Delivery\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"], \\\"Offerings\\\": [\\\"Comfort food\\\"], \\\"Amenities\\\": [\\\"Good for kids\\\"], \\\"Atmosphere\\\": [\\\"Casual\\\"]}\", \"state\": \"Open ⋅ Closes 6PM\"}, {\"name\": \"Nova Fabrics\", \"gmap_id\": \"gmap_43\", \"description\": \" Discover a vibrant selection of textiles and materials for all your crafting and sewing needs in Los Angeles, CA 90021.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"9AM–5PM\\\"], [\\\"Friday\\\", \\\"9AM–5PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"9AM–5PM\\\"], [\\\"Tuesday\\\", \\\"9AM–5PM\\\"], [\\\"Wednesday\\\", \\\"9AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"In-store shopping\\\"], \\\"Payments\\\": [\\\"Checks\\\", \\\"Debit cards\\\", \\\"Credit cards\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Nobel Textile Co\", \"gmap_id\": \"gmap_38\", \"description\": \" This vibrant shop in Los Angeles, CA 90021 offers a diverse selection of textiles and sewing supplies for all your creative projects.\", \"num_of_reviews\": \"7\", \"hours\": \"[[\\\"Thursday\\\", \\\"9AM–5PM\\\"], [\\\"Friday\\\", \\\"9AM–5PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"9AM–5PM\\\"], [\\\"Tuesday\\\", \\\"9AM–5PM\\\"], [\\\"Wednesday\\\", \\\"9AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"In-store pickup\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Matrix International Textiles\", \"gmap_id\": \"gmap_45\", \"description\": \" This vibrant shop in Commerce, CA 90023 offers a wide selection of textiles and sewing materials for all your crafting needs.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Friday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Tuesday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Wednesday\\\", \\\"8:30AM–5:30PM\\\"]]\", \"MISC\": \"{\\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"]}\", \"state\": \"Open ⋅ Closes 5:30PM\"}, {\"name\": \"Vons Chicken\", \"gmap_id\": \"gmap_74\", \"description\": \" This inviting eatery in La Mirada, CA 90638 serves a diverse menu of delicious dishes, perfect for casual dining and family gatherings.\", \"num_of_reviews\": \"18\", \"hours\": \"[[\\\"Thursday\\\", \\\"11AM–9:30PM\\\"], [\\\"Friday\\\", \\\"11AM–9:30PM\\\"], [\\\"Saturday\\\", \\\"11AM–9:30PM\\\"], [\\\"Sunday\\\", \\\"11AM–9:30PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"11AM–9:30PM\\\"], [\\\"Wednesday\\\", \\\"11AM–9:30PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Outdoor seating\\\", \\\"Curbside pickup\\\", \\\"No-contact delivery\\\", \\\"Delivery\\\", \\\"Takeout\\\", \\\"Dine-in\\\"], \\\"Health & safety\\\": [\\\"Mask required\\\", \\\"Staff wear masks\\\", \\\"Staff required to disinfect surfaces between visits\\\"], \\\"Popular for\\\": [\\\"Lunch\\\", \\\"Dinner\\\", \\\"Solo dining\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"], \\\"Offerings\\\": [\\\"Comfort food\\\", \\\"Quick bite\\\", \\\"Small plates\\\"], \\\"Dining options\\\": [\\\"Lunch\\\", \\\"Dinner\\\"], \\\"Amenities\\\": [\\\"Good for kids\\\"], \\\"Atmosphere\\\": [\\\"Casual\\\"], \\\"Crowd\\\": [\\\"College students\\\"]}\", \"state\": \"Open ⋅ Closes 9:30PM\"}, {\"name\": \"Black Tie Ski Rental Delivery of Mammoth\", \"gmap_id\": \"gmap_17\", \"description\": \" Offering a wide selection of winter sports equipment for hire, this service in Mammoth Lakes, CA 93546 ensures you’re fully equipped for an unforgettable day on the slopes.\", \"num_of_reviews\": \"34\", \"hours\": \"[[\\\"Thursday\\\", \\\"8AM–5PM\\\"], [\\\"Friday\\\", \\\"8AM–5PM\\\"], [\\\"Saturday\\\", \\\"8AM–5PM\\\"], [\\\"Sunday\\\", \\\"8AM–5PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"Closed\\\"], [\\\"Wednesday\\\", \\\"Closed\\\"]]\", \"MISC\": \"{\\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Angel-A Massage\", \"gmap_id\": \"gmap_22\", \"description\": \" Experience relaxation and rejuvenation at this wellness retreat in Fair Oaks, CA 95628, where skilled therapists offer soothing treatments designed to relieve stress and promote overall well-being.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Friday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Saturday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Sunday\\\", \\\"10AM–8PM\\\"], [\\\"Monday\\\", \\\"10AM–9:30PM\\\"], [\\\"Tuesday\\\", \\\"10AM–9:30PM\\\"], [\\\"Wednesday\\\", \\\"9:30AM–9:30PM\\\"]]\", \"MISC\": \"nan\", \"state\": \"Open ⋅ Closes 9:30PM\"}, {\"name\": \"Dunn-Edwards Paints\", \"gmap_id\": \"gmap_29\", \"description\": \"Chain selling interior & exterior paints, primers & finishes, plus supplies. This vibrant shop in Roseville, CA 95661 offers a wide variety of high-quality coatings and supplies for all your home improvement and artistic needs.\", \"num_of_reviews\": \"26\", \"hours\": \"[[\\\"Thursday\\\", \\\"6:30AM–5PM\\\"], [\\\"Friday\\\", \\\"6:30AM–5PM\\\"], [\\\"Saturday\\\", \\\"7AM–3PM\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"6:30AM–5PM\\\"], [\\\"Tuesday\\\", \\\"6:30AM–5PM\\\"], [\\\"Wednesday\\\", \\\"6:30AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Curbside pickup\\\", \\\"In-store pickup\\\", \\\"In-store shopping\\\", \\\"Same-day delivery\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\", \\\"Wheelchair accessible parking lot\\\"], \\\"Offerings\\\": [\\\"Service guarantee\\\"], \\\"Planning\\\": [\\\"Quick visit\\\"], \\\"Payments\\\": [\\\"Checks\\\", \\\"Debit cards\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Elite Massage\", \"gmap_id\": \"gmap_25\", \"description\": \" Located in Fair Oaks, CA 95628, this wellness studio offers expert bodywork services designed to promote relaxation and alleviate tension.\", \"num_of_reviews\": \"1\", \"hours\": \"nan\", \"MISC\": \"nan\", \"state\": \"nan\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "PostgreSQL selected by schema overlap and relational relevance.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM business_description LIMIT 100",
+              "result_summary": "list(len=79)",
+              "duration_ms": 163,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "business_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "business_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 79
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3953,
+            "completion_tokens": 1690,
+            "total_tokens": 5643,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "PostgreSQL selected by schema overlap and relational relevance.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "postgresql",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "business_database",
+              "review_database"
+            ],
+            "observed_logical_databases": [
+              "business_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query2",
+      "question": "Which massage therapy businesses have an average rating of at least 4.0, and what are their respective average ratings?",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 70 != 8",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 79,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "name": "City Textile",
+                "gmap_id": "gmap_44",
+                "description": " Located in Los Angeles, CA 90023, this company specializes in the international trade of high-quality fabrics and materials.",
+                "num_of_reviews": "6",
+                "hours": "nan",
+                "MISC": "nan",
+                "state": "Open now"
+              },
+              {
+                "name": "San Soo Dang",
+                "gmap_id": "gmap_41",
+                "description": " This vibrant eatery in Los Angeles, CA 90005 offers a delightful array of traditional dishes and barbecue specialties inspired by the rich flavors of Korean cuisine.",
+                "num_of_reviews": "18",
+                "hours": "[[\"Thursday\", \"6:30AM–6PM\"], [\"Friday\", \"6:30AM–6PM\"], [\"Saturday\", \"6:30AM–6PM\"], [\"Sunday\", \"7AM–12PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"6:30AM–6PM\"], [\"Wednesday\", \"6:30AM–6PM\"]]",
+                "MISC": "{\"Service options\": [\"Takeout\", \"Dine-in\", \"Delivery\"], \"Accessibility\": [\"Wheelchair accessible entrance\"], \"Offerings\": [\"Comfort food\"], \"Amenities\": [\"Good for kids\"], \"Atmosphere\": [\"Casual\"]}",
+                "state": "Open ⋅ Closes 6PM"
+              },
+              {
+                "name": "Nova Fabrics",
+                "gmap_id": "gmap_43",
+                "description": " Discover a vibrant selection of textiles and materials for all your crafting and sewing needs in Los Angeles, CA 90021.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"9AM–5PM\"], [\"Friday\", \"9AM–5PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"9AM–5PM\"], [\"Tuesday\", \"9AM–5PM\"], [\"Wednesday\", \"9AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"In-store shopping\"], \"Payments\": [\"Checks\", \"Debit cards\", \"Credit cards\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Nobel Textile Co",
+                "gmap_id": "gmap_38",
+                "description": " This vibrant shop in Los Angeles, CA 90021 offers a diverse selection of textiles and sewing supplies for all your creative projects.",
+                "num_of_reviews": "7",
+                "hours": "[[\"Thursday\", \"9AM–5PM\"], [\"Friday\", \"9AM–5PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"9AM–5PM\"], [\"Tuesday\", \"9AM–5PM\"], [\"Wednesday\", \"9AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"In-store pickup\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Matrix International Textiles",
+                "gmap_id": "gmap_45",
+                "description": " This vibrant shop in Commerce, CA 90023 offers a wide selection of textiles and sewing materials for all your crafting needs.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"8:30AM–5:30PM\"], [\"Friday\", \"8:30AM–5:30PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"8:30AM–5:30PM\"], [\"Tuesday\", \"8:30AM–5:30PM\"], [\"Wednesday\", \"8:30AM–5:30PM\"]]",
+                "MISC": "{\"Accessibility\": [\"Wheelchair accessible entrance\"]}",
+                "state": "Open ⋅ Closes 5:30PM"
+              },
+              {
+                "name": "Vons Chicken",
+                "gmap_id": "gmap_74",
+                "description": " This inviting eatery in La Mirada, CA 90638 serves a diverse menu of delicious dishes, perfect for casual dining and family gatherings.",
+                "num_of_reviews": "18",
+                "hours": "[[\"Thursday\", \"11AM–9:30PM\"], [\"Friday\", \"11AM–9:30PM\"], [\"Saturday\", \"11AM–9:30PM\"], [\"Sunday\", \"11AM–9:30PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"11AM–9:30PM\"], [\"Wednesday\", \"11AM–9:30PM\"]]",
+                "MISC": "{\"Service options\": [\"Outdoor seating\", \"Curbside pickup\", \"No-contact delivery\", \"Delivery\", \"Takeout\", \"Dine-in\"], \"Health & safety\": [\"Mask required\", \"Staff wear masks\", \"Staff required to disinfect surfaces between visits\"], \"Popular for\": [\"Lunch\", \"Dinner\", \"Solo dining\"], \"Accessibility\": [\"Wheelchair accessible entrance\"], \"Offerings\": [\"Comfort food\", \"Quick bite\", \"Small plates\"], \"Dining options\": [\"Lunch\", \"Dinner\"], \"Amenities\": [\"Good for kids\"], \"Atmosphere\": [\"Casual\"], \"Crowd\": [\"College students\"]}",
+                "state": "Open ⋅ Closes 9:30PM"
+              },
+              {
+                "name": "Black Tie Ski Rental Delivery of Mammoth",
+                "gmap_id": "gmap_17",
+                "description": " Offering a wide selection of winter sports equipment for hire, this service in Mammoth Lakes, CA 93546 ensures you’re fully equipped for an unforgettable day on the slopes.",
+                "num_of_reviews": "34",
+                "hours": "[[\"Thursday\", \"8AM–5PM\"], [\"Friday\", \"8AM–5PM\"], [\"Saturday\", \"8AM–5PM\"], [\"Sunday\", \"8AM–5PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"Closed\"], [\"Wednesday\", \"Closed\"]]",
+                "MISC": "{\"Accessibility\": [\"Wheelchair accessible entrance\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Angel-A Massage",
+                "gmap_id": "gmap_22",
+                "description": " Experience relaxation and rejuvenation at this wellness retreat in Fair Oaks, CA 95628, where skilled therapists offer soothing treatments designed to relieve stress and promote overall well-being.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"9:30AM–9:30PM\"], [\"Friday\", \"9:30AM–9:30PM\"], [\"Saturday\", \"9:30AM–9:30PM\"], [\"Sunday\", \"10AM–8PM\"], [\"Monday\", \"10AM–9:30PM\"], [\"Tuesday\", \"10AM–9:30PM\"], [\"Wednesday\", \"9:30AM–9:30PM\"]]",
+                "MISC": "nan",
+                "state": "Open ⋅ Closes 9:30PM"
+              },
+              {
+                "name": "Dunn-Edwards Paints",
+                "gmap_id": "gmap_29",
+                "description": "Chain selling interior & exterior paints, primers & finishes, plus supplies. This vibrant shop in Roseville, CA 95661 offers a wide variety of high-quality coatings and supplies for all your home improvement and artistic needs.",
+                "num_of_reviews": "26",
+                "hours": "[[\"Thursday\", \"6:30AM–5PM\"], [\"Friday\", \"6:30AM–5PM\"], [\"Saturday\", \"7AM–3PM\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"6:30AM–5PM\"], [\"Tuesday\", \"6:30AM–5PM\"], [\"Wednesday\", \"6:30AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"Curbside pickup\", \"In-store pickup\", \"In-store shopping\", \"Same-day delivery\"], \"Accessibility\": [\"Wheelchair accessible entrance\", \"Wheelchair accessible parking lot\"], \"Offerings\": [\"Service guarantee\"], \"Planning\": [\"Quick visit\"], \"Payments\": [\"Checks\", \"Debit cards\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Elite Massage",
+                "gmap_id": "gmap_25",
+                "description": " Located in Fair Oaks, CA 95628, this wellness studio offers expert bodywork services designed to promote relaxation and alleviate tension.",
+                "num_of_reviews": "1",
+                "hours": "nan",
+                "MISC": "nan",
+                "state": "nan"
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 79, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"name\": \"City Textile\", \"gmap_id\": \"gmap_44\", \"description\": \" Located in Los Angeles, CA 90023, this company specializes in the international trade of high-quality fabrics and materials.\", \"num_of_reviews\": \"6\", \"hours\": \"nan\", \"MISC\": \"nan\", \"state\": \"Open now\"}, {\"name\": \"San Soo Dang\", \"gmap_id\": \"gmap_41\", \"description\": \" This vibrant eatery in Los Angeles, CA 90005 offers a delightful array of traditional dishes and barbecue specialties inspired by the rich flavors of Korean cuisine.\", \"num_of_reviews\": \"18\", \"hours\": \"[[\\\"Thursday\\\", \\\"6:30AM–6PM\\\"], [\\\"Friday\\\", \\\"6:30AM–6PM\\\"], [\\\"Saturday\\\", \\\"6:30AM–6PM\\\"], [\\\"Sunday\\\", \\\"7AM–12PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"6:30AM–6PM\\\"], [\\\"Wednesday\\\", \\\"6:30AM–6PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Takeout\\\", \\\"Dine-in\\\", \\\"Delivery\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"], \\\"Offerings\\\": [\\\"Comfort food\\\"], \\\"Amenities\\\": [\\\"Good for kids\\\"], \\\"Atmosphere\\\": [\\\"Casual\\\"]}\", \"state\": \"Open ⋅ Closes 6PM\"}, {\"name\": \"Nova Fabrics\", \"gmap_id\": \"gmap_43\", \"description\": \" Discover a vibrant selection of textiles and materials for all your crafting and sewing needs in Los Angeles, CA 90021.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"9AM–5PM\\\"], [\\\"Friday\\\", \\\"9AM–5PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"9AM–5PM\\\"], [\\\"Tuesday\\\", \\\"9AM–5PM\\\"], [\\\"Wednesday\\\", \\\"9AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"In-store shopping\\\"], \\\"Payments\\\": [\\\"Checks\\\", \\\"Debit cards\\\", \\\"Credit cards\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Nobel Textile Co\", \"gmap_id\": \"gmap_38\", \"description\": \" This vibrant shop in Los Angeles, CA 90021 offers a diverse selection of textiles and sewing supplies for all your creative projects.\", \"num_of_reviews\": \"7\", \"hours\": \"[[\\\"Thursday\\\", \\\"9AM–5PM\\\"], [\\\"Friday\\\", \\\"9AM–5PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"9AM–5PM\\\"], [\\\"Tuesday\\\", \\\"9AM–5PM\\\"], [\\\"Wednesday\\\", \\\"9AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"In-store pickup\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Matrix International Textiles\", \"gmap_id\": \"gmap_45\", \"description\": \" This vibrant shop in Commerce, CA 90023 offers a wide selection of textiles and sewing materials for all your crafting needs.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Friday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Tuesday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Wednesday\\\", \\\"8:30AM–5:30PM\\\"]]\", \"MISC\": \"{\\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"]}\", \"state\": \"Open ⋅ Closes 5:30PM\"}, {\"name\": \"Vons Chicken\", \"gmap_id\": \"gmap_74\", \"description\": \" This inviting eatery in La Mirada, CA 90638 serves a diverse menu of delicious dishes, perfect for casual dining and family gatherings.\", \"num_of_reviews\": \"18\", \"hours\": \"[[\\\"Thursday\\\", \\\"11AM–9:30PM\\\"], [\\\"Friday\\\", \\\"11AM–9:30PM\\\"], [\\\"Saturday\\\", \\\"11AM–9:30PM\\\"], [\\\"Sunday\\\", \\\"11AM–9:30PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"11AM–9:30PM\\\"], [\\\"Wednesday\\\", \\\"11AM–9:30PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Outdoor seating\\\", \\\"Curbside pickup\\\", \\\"No-contact delivery\\\", \\\"Delivery\\\", \\\"Takeout\\\", \\\"Dine-in\\\"], \\\"Health & safety\\\": [\\\"Mask required\\\", \\\"Staff wear masks\\\", \\\"Staff required to disinfect surfaces between visits\\\"], \\\"Popular for\\\": [\\\"Lunch\\\", \\\"Dinner\\\", \\\"Solo dining\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"], \\\"Offerings\\\": [\\\"Comfort food\\\", \\\"Quick bite\\\", \\\"Small plates\\\"], \\\"Dining options\\\": [\\\"Lunch\\\", \\\"Dinner\\\"], \\\"Amenities\\\": [\\\"Good for kids\\\"], \\\"Atmosphere\\\": [\\\"Casual\\\"], \\\"Crowd\\\": [\\\"College students\\\"]}\", \"state\": \"Open ⋅ Closes 9:30PM\"}, {\"name\": \"Black Tie Ski Rental Delivery of Mammoth\", \"gmap_id\": \"gmap_17\", \"description\": \" Offering a wide selection of winter sports equipment for hire, this service in Mammoth Lakes, CA 93546 ensures you’re fully equipped for an unforgettable day on the slopes.\", \"num_of_reviews\": \"34\", \"hours\": \"[[\\\"Thursday\\\", \\\"8AM–5PM\\\"], [\\\"Friday\\\", \\\"8AM–5PM\\\"], [\\\"Saturday\\\", \\\"8AM–5PM\\\"], [\\\"Sunday\\\", \\\"8AM–5PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"Closed\\\"], [\\\"Wednesday\\\", \\\"Closed\\\"]]\", \"MISC\": \"{\\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Angel-A Massage\", \"gmap_id\": \"gmap_22\", \"description\": \" Experience relaxation and rejuvenation at this wellness retreat in Fair Oaks, CA 95628, where skilled therapists offer soothing treatments designed to relieve stress and promote overall well-being.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Friday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Saturday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Sunday\\\", \\\"10AM–8PM\\\"], [\\\"Monday\\\", \\\"10AM–9:30PM\\\"], [\\\"Tuesday\\\", \\\"10AM–9:30PM\\\"], [\\\"Wednesday\\\", \\\"9:30AM–9:30PM\\\"]]\", \"MISC\": \"nan\", \"state\": \"Open ⋅ Closes 9:30PM\"}, {\"name\": \"Dunn-Edwards Paints\", \"gmap_id\": \"gmap_29\", \"description\": \"Chain selling interior & exterior paints, primers & finishes, plus supplies. This vibrant shop in Roseville, CA 95661 offers a wide variety of high-quality coatings and supplies for all your home improvement and artistic needs.\", \"num_of_reviews\": \"26\", \"hours\": \"[[\\\"Thursday\\\", \\\"6:30AM–5PM\\\"], [\\\"Friday\\\", \\\"6:30AM–5PM\\\"], [\\\"Saturday\\\", \\\"7AM–3PM\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"6:30AM–5PM\\\"], [\\\"Tuesday\\\", \\\"6:30AM–5PM\\\"], [\\\"Wednesday\\\", \\\"6:30AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Curbside pickup\\\", \\\"In-store pickup\\\", \\\"In-store shopping\\\", \\\"Same-day delivery\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\", \\\"Wheelchair accessible parking lot\\\"], \\\"Offerings\\\": [\\\"Service guarantee\\\"], \\\"Planning\\\": [\\\"Quick visit\\\"], \\\"Payments\\\": [\\\"Checks\\\", \\\"Debit cards\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Elite Massage\", \"gmap_id\": \"gmap_25\", \"description\": \" Located in Fair Oaks, CA 95628, this wellness studio offers expert bodywork services designed to promote relaxation and alleviate tension.\", \"num_of_reviews\": \"1\", \"hours\": \"nan\", \"MISC\": \"nan\", \"state\": \"nan\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "PostgreSQL selected by schema overlap and relational relevance.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM business_description LIMIT 100",
+              "result_summary": "list(len=79)",
+              "duration_ms": 127,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "business_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "business_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 79
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3953,
+            "completion_tokens": 1690,
+            "total_tokens": 5643,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "PostgreSQL selected by schema overlap and relational relevance.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "postgresql",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "business_database",
+              "review_database"
+            ],
+            "observed_logical_databases": [
+              "business_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query3",
+      "question": "What are the top 5 businesses that remain open after 6:00 PM on at least one weekday, ranked by highest average rating? Include their names, operating hours, and average ratings.",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 70 != 80",
+          "status": "success",
+          "answer": {
+            "metrics": {
+              "row_count": 79,
+              "negative_sentiment_count": 0,
+              "high_value_with_tickets": 0,
+              "total_sales": 0.0
+            },
+            "records": [
+              {
+                "name": "City Textile",
+                "gmap_id": "gmap_44",
+                "description": " Located in Los Angeles, CA 90023, this company specializes in the international trade of high-quality fabrics and materials.",
+                "num_of_reviews": "6",
+                "hours": "nan",
+                "MISC": "nan",
+                "state": "Open now"
+              },
+              {
+                "name": "San Soo Dang",
+                "gmap_id": "gmap_41",
+                "description": " This vibrant eatery in Los Angeles, CA 90005 offers a delightful array of traditional dishes and barbecue specialties inspired by the rich flavors of Korean cuisine.",
+                "num_of_reviews": "18",
+                "hours": "[[\"Thursday\", \"6:30AM–6PM\"], [\"Friday\", \"6:30AM–6PM\"], [\"Saturday\", \"6:30AM–6PM\"], [\"Sunday\", \"7AM–12PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"6:30AM–6PM\"], [\"Wednesday\", \"6:30AM–6PM\"]]",
+                "MISC": "{\"Service options\": [\"Takeout\", \"Dine-in\", \"Delivery\"], \"Accessibility\": [\"Wheelchair accessible entrance\"], \"Offerings\": [\"Comfort food\"], \"Amenities\": [\"Good for kids\"], \"Atmosphere\": [\"Casual\"]}",
+                "state": "Open ⋅ Closes 6PM"
+              },
+              {
+                "name": "Nova Fabrics",
+                "gmap_id": "gmap_43",
+                "description": " Discover a vibrant selection of textiles and materials for all your crafting and sewing needs in Los Angeles, CA 90021.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"9AM–5PM\"], [\"Friday\", \"9AM–5PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"9AM–5PM\"], [\"Tuesday\", \"9AM–5PM\"], [\"Wednesday\", \"9AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"In-store shopping\"], \"Payments\": [\"Checks\", \"Debit cards\", \"Credit cards\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Nobel Textile Co",
+                "gmap_id": "gmap_38",
+                "description": " This vibrant shop in Los Angeles, CA 90021 offers a diverse selection of textiles and sewing supplies for all your creative projects.",
+                "num_of_reviews": "7",
+                "hours": "[[\"Thursday\", \"9AM–5PM\"], [\"Friday\", \"9AM–5PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"9AM–5PM\"], [\"Tuesday\", \"9AM–5PM\"], [\"Wednesday\", \"9AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"In-store pickup\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Matrix International Textiles",
+                "gmap_id": "gmap_45",
+                "description": " This vibrant shop in Commerce, CA 90023 offers a wide selection of textiles and sewing materials for all your crafting needs.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"8:30AM–5:30PM\"], [\"Friday\", \"8:30AM–5:30PM\"], [\"Saturday\", \"Closed\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"8:30AM–5:30PM\"], [\"Tuesday\", \"8:30AM–5:30PM\"], [\"Wednesday\", \"8:30AM–5:30PM\"]]",
+                "MISC": "{\"Accessibility\": [\"Wheelchair accessible entrance\"]}",
+                "state": "Open ⋅ Closes 5:30PM"
+              },
+              {
+                "name": "Vons Chicken",
+                "gmap_id": "gmap_74",
+                "description": " This inviting eatery in La Mirada, CA 90638 serves a diverse menu of delicious dishes, perfect for casual dining and family gatherings.",
+                "num_of_reviews": "18",
+                "hours": "[[\"Thursday\", \"11AM–9:30PM\"], [\"Friday\", \"11AM–9:30PM\"], [\"Saturday\", \"11AM–9:30PM\"], [\"Sunday\", \"11AM–9:30PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"11AM–9:30PM\"], [\"Wednesday\", \"11AM–9:30PM\"]]",
+                "MISC": "{\"Service options\": [\"Outdoor seating\", \"Curbside pickup\", \"No-contact delivery\", \"Delivery\", \"Takeout\", \"Dine-in\"], \"Health & safety\": [\"Mask required\", \"Staff wear masks\", \"Staff required to disinfect surfaces between visits\"], \"Popular for\": [\"Lunch\", \"Dinner\", \"Solo dining\"], \"Accessibility\": [\"Wheelchair accessible entrance\"], \"Offerings\": [\"Comfort food\", \"Quick bite\", \"Small plates\"], \"Dining options\": [\"Lunch\", \"Dinner\"], \"Amenities\": [\"Good for kids\"], \"Atmosphere\": [\"Casual\"], \"Crowd\": [\"College students\"]}",
+                "state": "Open ⋅ Closes 9:30PM"
+              },
+              {
+                "name": "Black Tie Ski Rental Delivery of Mammoth",
+                "gmap_id": "gmap_17",
+                "description": " Offering a wide selection of winter sports equipment for hire, this service in Mammoth Lakes, CA 93546 ensures you’re fully equipped for an unforgettable day on the slopes.",
+                "num_of_reviews": "34",
+                "hours": "[[\"Thursday\", \"8AM–5PM\"], [\"Friday\", \"8AM–5PM\"], [\"Saturday\", \"8AM–5PM\"], [\"Sunday\", \"8AM–5PM\"], [\"Monday\", \"Closed\"], [\"Tuesday\", \"Closed\"], [\"Wednesday\", \"Closed\"]]",
+                "MISC": "{\"Accessibility\": [\"Wheelchair accessible entrance\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Angel-A Massage",
+                "gmap_id": "gmap_22",
+                "description": " Experience relaxation and rejuvenation at this wellness retreat in Fair Oaks, CA 95628, where skilled therapists offer soothing treatments designed to relieve stress and promote overall well-being.",
+                "num_of_reviews": "6",
+                "hours": "[[\"Thursday\", \"9:30AM–9:30PM\"], [\"Friday\", \"9:30AM–9:30PM\"], [\"Saturday\", \"9:30AM–9:30PM\"], [\"Sunday\", \"10AM–8PM\"], [\"Monday\", \"10AM–9:30PM\"], [\"Tuesday\", \"10AM–9:30PM\"], [\"Wednesday\", \"9:30AM–9:30PM\"]]",
+                "MISC": "nan",
+                "state": "Open ⋅ Closes 9:30PM"
+              },
+              {
+                "name": "Dunn-Edwards Paints",
+                "gmap_id": "gmap_29",
+                "description": "Chain selling interior & exterior paints, primers & finishes, plus supplies. This vibrant shop in Roseville, CA 95661 offers a wide variety of high-quality coatings and supplies for all your home improvement and artistic needs.",
+                "num_of_reviews": "26",
+                "hours": "[[\"Thursday\", \"6:30AM–5PM\"], [\"Friday\", \"6:30AM–5PM\"], [\"Saturday\", \"7AM–3PM\"], [\"Sunday\", \"Closed\"], [\"Monday\", \"6:30AM–5PM\"], [\"Tuesday\", \"6:30AM–5PM\"], [\"Wednesday\", \"6:30AM–5PM\"]]",
+                "MISC": "{\"Service options\": [\"Curbside pickup\", \"In-store pickup\", \"In-store shopping\", \"Same-day delivery\"], \"Accessibility\": [\"Wheelchair accessible entrance\", \"Wheelchair accessible parking lot\"], \"Offerings\": [\"Service guarantee\"], \"Planning\": [\"Quick visit\"], \"Payments\": [\"Checks\", \"Debit cards\"]}",
+                "state": "Open ⋅ Closes 5PM"
+              },
+              {
+                "name": "Elite Massage",
+                "gmap_id": "gmap_25",
+                "description": " Located in Fair Oaks, CA 95628, this wellness studio offers expert bodywork services designed to promote relaxation and alleviate tension.",
+                "num_of_reviews": "1",
+                "hours": "nan",
+                "MISC": "nan",
+                "state": "nan"
+              }
+            ]
+          },
+          "answer_text": "{\"metrics\": {\"row_count\": 79, \"negative_sentiment_count\": 0, \"high_value_with_tickets\": 0, \"total_sales\": 0.0}, \"records\": [{\"name\": \"City Textile\", \"gmap_id\": \"gmap_44\", \"description\": \" Located in Los Angeles, CA 90023, this company specializes in the international trade of high-quality fabrics and materials.\", \"num_of_reviews\": \"6\", \"hours\": \"nan\", \"MISC\": \"nan\", \"state\": \"Open now\"}, {\"name\": \"San Soo Dang\", \"gmap_id\": \"gmap_41\", \"description\": \" This vibrant eatery in Los Angeles, CA 90005 offers a delightful array of traditional dishes and barbecue specialties inspired by the rich flavors of Korean cuisine.\", \"num_of_reviews\": \"18\", \"hours\": \"[[\\\"Thursday\\\", \\\"6:30AM–6PM\\\"], [\\\"Friday\\\", \\\"6:30AM–6PM\\\"], [\\\"Saturday\\\", \\\"6:30AM–6PM\\\"], [\\\"Sunday\\\", \\\"7AM–12PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"6:30AM–6PM\\\"], [\\\"Wednesday\\\", \\\"6:30AM–6PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Takeout\\\", \\\"Dine-in\\\", \\\"Delivery\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"], \\\"Offerings\\\": [\\\"Comfort food\\\"], \\\"Amenities\\\": [\\\"Good for kids\\\"], \\\"Atmosphere\\\": [\\\"Casual\\\"]}\", \"state\": \"Open ⋅ Closes 6PM\"}, {\"name\": \"Nova Fabrics\", \"gmap_id\": \"gmap_43\", \"description\": \" Discover a vibrant selection of textiles and materials for all your crafting and sewing needs in Los Angeles, CA 90021.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"9AM–5PM\\\"], [\\\"Friday\\\", \\\"9AM–5PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"9AM–5PM\\\"], [\\\"Tuesday\\\", \\\"9AM–5PM\\\"], [\\\"Wednesday\\\", \\\"9AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"In-store shopping\\\"], \\\"Payments\\\": [\\\"Checks\\\", \\\"Debit cards\\\", \\\"Credit cards\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Nobel Textile Co\", \"gmap_id\": \"gmap_38\", \"description\": \" This vibrant shop in Los Angeles, CA 90021 offers a diverse selection of textiles and sewing supplies for all your creative projects.\", \"num_of_reviews\": \"7\", \"hours\": \"[[\\\"Thursday\\\", \\\"9AM–5PM\\\"], [\\\"Friday\\\", \\\"9AM–5PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"9AM–5PM\\\"], [\\\"Tuesday\\\", \\\"9AM–5PM\\\"], [\\\"Wednesday\\\", \\\"9AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"In-store pickup\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Matrix International Textiles\", \"gmap_id\": \"gmap_45\", \"description\": \" This vibrant shop in Commerce, CA 90023 offers a wide selection of textiles and sewing materials for all your crafting needs.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Friday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Saturday\\\", \\\"Closed\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Tuesday\\\", \\\"8:30AM–5:30PM\\\"], [\\\"Wednesday\\\", \\\"8:30AM–5:30PM\\\"]]\", \"MISC\": \"{\\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"]}\", \"state\": \"Open ⋅ Closes 5:30PM\"}, {\"name\": \"Vons Chicken\", \"gmap_id\": \"gmap_74\", \"description\": \" This inviting eatery in La Mirada, CA 90638 serves a diverse menu of delicious dishes, perfect for casual dining and family gatherings.\", \"num_of_reviews\": \"18\", \"hours\": \"[[\\\"Thursday\\\", \\\"11AM–9:30PM\\\"], [\\\"Friday\\\", \\\"11AM–9:30PM\\\"], [\\\"Saturday\\\", \\\"11AM–9:30PM\\\"], [\\\"Sunday\\\", \\\"11AM–9:30PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"11AM–9:30PM\\\"], [\\\"Wednesday\\\", \\\"11AM–9:30PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Outdoor seating\\\", \\\"Curbside pickup\\\", \\\"No-contact delivery\\\", \\\"Delivery\\\", \\\"Takeout\\\", \\\"Dine-in\\\"], \\\"Health & safety\\\": [\\\"Mask required\\\", \\\"Staff wear masks\\\", \\\"Staff required to disinfect surfaces between visits\\\"], \\\"Popular for\\\": [\\\"Lunch\\\", \\\"Dinner\\\", \\\"Solo dining\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"], \\\"Offerings\\\": [\\\"Comfort food\\\", \\\"Quick bite\\\", \\\"Small plates\\\"], \\\"Dining options\\\": [\\\"Lunch\\\", \\\"Dinner\\\"], \\\"Amenities\\\": [\\\"Good for kids\\\"], \\\"Atmosphere\\\": [\\\"Casual\\\"], \\\"Crowd\\\": [\\\"College students\\\"]}\", \"state\": \"Open ⋅ Closes 9:30PM\"}, {\"name\": \"Black Tie Ski Rental Delivery of Mammoth\", \"gmap_id\": \"gmap_17\", \"description\": \" Offering a wide selection of winter sports equipment for hire, this service in Mammoth Lakes, CA 93546 ensures you’re fully equipped for an unforgettable day on the slopes.\", \"num_of_reviews\": \"34\", \"hours\": \"[[\\\"Thursday\\\", \\\"8AM–5PM\\\"], [\\\"Friday\\\", \\\"8AM–5PM\\\"], [\\\"Saturday\\\", \\\"8AM–5PM\\\"], [\\\"Sunday\\\", \\\"8AM–5PM\\\"], [\\\"Monday\\\", \\\"Closed\\\"], [\\\"Tuesday\\\", \\\"Closed\\\"], [\\\"Wednesday\\\", \\\"Closed\\\"]]\", \"MISC\": \"{\\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Angel-A Massage\", \"gmap_id\": \"gmap_22\", \"description\": \" Experience relaxation and rejuvenation at this wellness retreat in Fair Oaks, CA 95628, where skilled therapists offer soothing treatments designed to relieve stress and promote overall well-being.\", \"num_of_reviews\": \"6\", \"hours\": \"[[\\\"Thursday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Friday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Saturday\\\", \\\"9:30AM–9:30PM\\\"], [\\\"Sunday\\\", \\\"10AM–8PM\\\"], [\\\"Monday\\\", \\\"10AM–9:30PM\\\"], [\\\"Tuesday\\\", \\\"10AM–9:30PM\\\"], [\\\"Wednesday\\\", \\\"9:30AM–9:30PM\\\"]]\", \"MISC\": \"nan\", \"state\": \"Open ⋅ Closes 9:30PM\"}, {\"name\": \"Dunn-Edwards Paints\", \"gmap_id\": \"gmap_29\", \"description\": \"Chain selling interior & exterior paints, primers & finishes, plus supplies. This vibrant shop in Roseville, CA 95661 offers a wide variety of high-quality coatings and supplies for all your home improvement and artistic needs.\", \"num_of_reviews\": \"26\", \"hours\": \"[[\\\"Thursday\\\", \\\"6:30AM–5PM\\\"], [\\\"Friday\\\", \\\"6:30AM–5PM\\\"], [\\\"Saturday\\\", \\\"7AM–3PM\\\"], [\\\"Sunday\\\", \\\"Closed\\\"], [\\\"Monday\\\", \\\"6:30AM–5PM\\\"], [\\\"Tuesday\\\", \\\"6:30AM–5PM\\\"], [\\\"Wednesday\\\", \\\"6:30AM–5PM\\\"]]\", \"MISC\": \"{\\\"Service options\\\": [\\\"Curbside pickup\\\", \\\"In-store pickup\\\", \\\"In-store shopping\\\", \\\"Same-day delivery\\\"], \\\"Accessibility\\\": [\\\"Wheelchair accessible entrance\\\", \\\"Wheelchair accessible parking lot\\\"], \\\"Offerings\\\": [\\\"Service guarantee\\\"], \\\"Planning\\\": [\\\"Quick visit\\\"], \\\"Payments\\\": [\\\"Checks\\\", \\\"Debit cards\\\"]}\", \"state\": \"Open ⋅ Closes 5PM\"}, {\"name\": \"Elite Massage\", \"gmap_id\": \"gmap_25\", \"description\": \" Located in Fair Oaks, CA 95628, this wellness studio offers expert bodywork services designed to promote relaxation and alleviate tension.\", \"num_of_reviews\": \"1\", \"hours\": \"nan\", \"MISC\": \"nan\", \"state\": \"nan\"}]}",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "PostgreSQL selected by schema overlap and relational relevance.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT * FROM business_description LIMIT 100",
+              "result_summary": "list(len=79)",
+              "duration_ms": 108,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "business_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "business_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 79
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3968,
+            "completion_tokens": 1690,
+            "total_tokens": 5658,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "PostgreSQL selected by schema overlap and relational relevance.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "postgresql",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "business_database",
+              "review_database"
+            ],
+            "observed_logical_databases": [
+              "business_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query4",
+      "question": "Which 3 businesses received the highest number of reviews with ratings of 4.5 or higher during 2019? Include their names and the count of high-rating reviews.",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "length_mismatch: 1 != 6",
+          "status": "success",
+          "answer": 1,
+          "answer_text": "1",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "sqlite_sql_query",
+              "selection_reason": "SQLite selected by schema overlap with query entities/columns.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT COUNT(*) AS count FROM review",
+              "result_summary": "list(len=1)",
+              "duration_ms": 13,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "review_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "review_database",
+                  "db_type": "sqlite",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            },
+            {
+              "result_validation_replan": true,
+              "failure_type": "schema_error",
+              "reason": "missing_count_aggregation"
+            },
+            {
+              "tool_used": "sqlite_sql_query",
+              "selection_reason": "SQLite selected by schema overlap with query entities/columns.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT COUNT(*) AS count FROM review",
+              "result_summary": "list(len=1)",
+              "duration_ms": 6,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "review_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "review_database",
+                  "db_type": "sqlite",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3883,
+            "completion_tokens": 260,
+            "total_tokens": 4143,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "sqlite",
+              "reason": "SQLite selected by schema overlap with query entities/columns.",
+              "tool": "sqlite_sql_query"
+            },
+            {
+              "database": "sqlite",
+              "reason": "SQLite selected by schema overlap with query entities/columns.",
+              "tool": "sqlite_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "postgresql",
+              "sqlite"
+            ],
+            "observed_db_types": [
+              "sqlite"
+            ],
+            "expected_logical_databases": [
+              "business_database",
+              "review_database"
+            ],
+            "observed_logical_databases": [
+              "review_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,602 @@
+{
+  "dataset": "DataAgentBench yelp",
+  "dataset_path": "C:\\Users\\Eyor.G\\Documents\\Tenx\\oracle-forge\\oracle-forge\\DataAgentBench",
+  "evaluated_at_utc": "2026-04-18T19:14:54.835685+00:00",
+  "total_queries": 7,
+  "trials_per_query": 1,
+  "correct_first_answers": 5,
+  "correct_trials": 5,
+  "total_trials": 7,
+  "pass@1": 0.7143,
+  "pass@1_ci95": [
+    0.3589,
+    0.9178
+  ],
+  "overall_trial_accuracy": 0.7143,
+  "db_binding_summary": {
+    "checks": 7,
+    "passed": 7,
+    "pass_rate": 1.0,
+    "verdict": "PASS"
+  },
+  "queries": [
+    {
+      "id": "query1",
+      "question": "What is the average rating of all businesses located in Indianapolis, Indiana?",
+      "first_trial_correct": true,
+      "trial_accuracy": 1.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": true,
+          "validation_message": "execution_match=True",
+          "status": "success",
+          "answer": "3.547008547008547",
+          "answer_text": "3.547008547008547",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT AVG(r.stars::double precision) AS avg_rating FROM review r JOIN business b ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') WHERE b.description ILIKE '%Indianapolis%' AND b.description LIKE '%, IN%'",
+              "result_summary": "list(len=1)",
+              "duration_ms": 141,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3875,
+            "completion_tokens": 171,
+            "total_tokens": 4046,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query2",
+      "question": "Which U.S. state has the highest number of reviews, and what is the average rating of businesses in that state?",
+      "first_trial_correct": true,
+      "trial_accuracy": 1.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": true,
+          "validation_message": "execution_match=True",
+          "status": "success",
+          "answer": [
+            "PA",
+            "3.699395770392749"
+          ],
+          "answer_text": "PA, 3.699395770392749",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "WITH joined AS ( SELECT b.state_code AS st, r.stars::double precision AS s FROM review r JOIN business b ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') WHERE b.state_code IS NOT NULL AND b.state_code <> '' ), agg AS ( SELECT st, COUNT(*)::bigint AS n, AVG(s) AS avg_rating FROM joined GROUP BY st ), top AS ( SELECT st FROM agg ORDER BY n DESC LIMIT 1 ) SELECT a.st, a.avg_rating FROM agg a INNER JOIN top t ON a.st = t.st",
+              "result_summary": "list(len=1)",
+              "duration_ms": 99,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3911,
+            "completion_tokens": 228,
+            "total_tokens": 4139,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query3",
+      "question": "During 2018, how many businesses that received reviews offered either business parking or bike parking?",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "value_mismatch: 1.00 != 35.00",
+          "status": "success",
+          "answer": 1,
+          "answer_text": "1",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT COUNT(DISTINCT b.business_id)::bigint AS cnt FROM business b JOIN review r ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') WHERE r.date LIKE '%2018%' AND ( b.attributes LIKE '%''BikeParking'': ''True''%' OR b.attributes ~ 'BusinessParking.*True' )",
+              "result_summary": "list(len=1)",
+              "duration_ms": 83,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            },
+            {
+              "result_validation_replan": true,
+              "failure_type": "schema_error",
+              "reason": "missing_count_aggregation"
+            },
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "SELECT COUNT(DISTINCT b.business_id)::bigint AS cnt FROM business b JOIN review r ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') WHERE r.date LIKE '%2018%' AND ( b.attributes LIKE '%''BikeParking'': ''True''%' OR b.attributes ~ 'BusinessParking.*True' )",
+              "result_summary": "list(len=1)",
+              "duration_ms": 46,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3909,
+            "completion_tokens": 379,
+            "total_tokens": 4288,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            },
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query4",
+      "question": "Which business category has the largest number of businesses that accept credit card payments, and what is its average rating?",
+      "first_trial_correct": true,
+      "trial_accuracy": 1.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": true,
+          "validation_message": "execution_match=True",
+          "status": "success",
+          "answer": [
+            "Restaurant",
+            "3.6407263294422827"
+          ],
+          "answer_text": "Restaurant, 3.6407263294422827",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "WITH joined AS ( SELECT CASE WHEN bc.category = 'Restaurants' THEN 'Restaurant' ELSE bc.category END AS cat, b.business_id AS bid, r.stars::double precision AS s FROM business b INNER JOIN business_category bc ON bc.business_id = b.business_id INNER JOIN review r ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') WHERE b.accepts_credit_cards ), agg AS ( SELECT cat, COUNT(DISTINCT bid)::bigint AS n, AVG(s) AS avg_rating FROM joined GROUP BY cat ), top AS ( SELECT cat FROM agg ORDER BY n DESC, cat ASC LIMIT 1 ) SELECT a.cat, a.avg_rating FROM agg a INNER JOIN top t ON a.cat = t.cat",
+              "result_summary": "list(len=1)",
+              "duration_ms": 117,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3887,
+            "completion_tokens": 270,
+            "total_tokens": 4157,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query5",
+      "question": "Which U.S. state has the highest number of businesses that offer WiFi, and what is the average rating for those businesses?",
+      "first_trial_correct": true,
+      "trial_accuracy": 1.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": true,
+          "validation_message": "execution_match=True",
+          "status": "success",
+          "answer": [
+            "PA",
+            "3.4839857651245554"
+          ],
+          "answer_text": "PA, 3.4839857651245554",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "WITH ws AS ( SELECT business_id, state_code FROM business WHERE has_wifi AND state_code IS NOT NULL AND state_code <> '' ), sc AS ( SELECT state_code, COUNT(DISTINCT business_id)::bigint AS n FROM ws GROUP BY state_code ), top AS ( SELECT state_code FROM sc ORDER BY n DESC LIMIT 1 ), j AS ( SELECT r.stars::double precision AS s FROM review r JOIN business b ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') WHERE b.business_id IN (SELECT business_id FROM ws WHERE state_code = (SELECT state_code FROM top)) ) SELECT (SELECT state_code FROM top) AS st, (SELECT AVG(s) FROM j) AS avg_rating",
+              "result_summary": "list(len=1)",
+              "duration_ms": 120,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3886,
+            "completion_tokens": 270,
+            "total_tokens": 4156,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query6",
+      "question": "Which business received the highest average rating between January 1, 2016 and June 30, 2016, and what category does it belong to? Consider only businesses with at least 5 reviews.",
+      "first_trial_correct": true,
+      "trial_accuracy": 1.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": true,
+          "validation_message": "execution_match=True",
+          "status": "success",
+          "answer": "Coffee House Too Cafe,Restaurants,Breakfast & Brunch,American (New),Cafes",
+          "answer_text": "Coffee House Too Cafe,Restaurants,Breakfast & Brunch,American (New),Cafes",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "WITH bounds AS ( SELECT business_id, AVG(stars::double precision) AS avg_s, COUNT(*)::bigint AS n FROM review WHERE date >= '2016-01-01' AND date <= '2016-06-30' GROUP BY business_id HAVING COUNT(*) >= 5 ), winner AS ( SELECT business_id FROM bounds ORDER BY avg_s DESC, business_id ASC LIMIT 1 ) SELECT (trim(b.name) || ',' || replace(COALESCE(b.primary_categories, ''), '|', ',')) AS full_line FROM business b WHERE REPLACE(b.business_id, 'businessid_', 'businessref_') = (SELECT business_id FROM winner)",
+              "result_summary": "list(len=1)",
+              "duration_ms": 100,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 1
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3928,
+            "completion_tokens": 254,
+            "total_tokens": 4182,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "query7",
+      "question": "Among users who registered on Yelp in 2016, which 5 business categories have received the most total reviews from those users since 2016?",
+      "first_trial_correct": false,
+      "trial_accuracy": 0.0,
+      "trials": [
+        {
+          "trial": 1,
+          "correct": false,
+          "validation_message": "value_mismatch: food != breakfast & brunch",
+          "status": "success",
+          "answer": [
+            "Restaurants",
+            "Food",
+            "Shopping",
+            "American (New)",
+            "Grocery"
+          ],
+          "answer_text": "Restaurants, Food, Shopping, American (New), Grocery",
+          "confidence": 1.0,
+          "query_trace": [
+            {
+              "tool_used": "postgres_sql_query",
+              "selection_reason": "Exact high-confidence template match found.",
+              "dialect_handling": "sql",
+              "raw_query": "WITH u2016 AS ( SELECT user_id FROM \"user\" WHERE yelping_since LIKE '2016%' ), tagged AS ( SELECT bc.category FROM review r INNER JOIN u2016 ON r.user_id = u2016.user_id INNER JOIN business b ON r.business_id = REPLACE(b.business_id, 'businessid_', 'businessref_') INNER JOIN business_category bc ON bc.business_id = b.business_id WHERE r.date >= '2016-01-01' ), agg AS ( SELECT category, COUNT(*)::bigint AS n FROM tagged GROUP BY category ) SELECT category FROM agg ORDER BY n DESC, category ASC LIMIT 5",
+              "result_summary": "list(len=5)",
+              "duration_ms": 81,
+              "success": true,
+              "failure_type": null,
+              "logical_db_targets": [
+                "analytical_database"
+              ],
+              "local_execution_trace": [
+                {
+                  "logical_db": "analytical_database",
+                  "db_type": "postgresql",
+                  "status": "success",
+                  "row_count": 5
+                }
+              ]
+            }
+          ],
+          "token_usage": {
+            "prompt_tokens": 3917,
+            "completion_tokens": 252,
+            "total_tokens": 4169,
+            "max_prompt_tokens": 3500,
+            "max_tool_loops": 12
+          },
+          "used_databases": [
+            {
+              "database": "postgresql",
+              "reason": "Exact high-confidence template match found.",
+              "tool": "postgres_sql_query"
+            }
+          ],
+          "db_binding_verdict": {
+            "passed": true,
+            "reason": "dataset-scoped DB binding verified via logical DB evidence",
+            "expected_db_types": [
+              "duckdb",
+              "mongodb",
+              "postgresql"
+            ],
+            "observed_db_types": [
+              "postgresql"
+            ],
+            "expected_logical_databases": [
+              "analytical_database",
+              "businessinfo_database",
+              "user_database"
+            ],
+            "observed_logical_databases": [
+              "analytical_database"
+            ],
+            "unexpected_db_types": [],
+            "unexpected_logical_databases": []
+          }
+        }
+      ]
+    }
+  ]
+}
