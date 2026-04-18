@@ -30,7 +30,9 @@ We deliberately did **not** externalize benchmark pass@1 numbers. The team's int
 ### X — Reply-threaded placements + main-account broadcasts
 - **Apr 13:** 5 reply-placements under larger accounts (@shipp_ai, @_avichawla, @himanshustwts, @sh_reya, @ashpreetbedi). **@matanzutta returned a verbatim thesis-restatement of the Domain Knowledge angle** — highest-signal external validation of the portfolio.
 - **Apr 14:** 8 posts across 4 X Communities (AI Agents 14.7K, ML, AI/Python/Data, Open Source Contributors). 2 received practitioner replies (@jcubic, @anandrishv).
-- **Apr 18 (post-midnight UTC):** 5 broadcasts from @kirubeltewodro2 covering architecture-gap framing + paraphrase-failure framing. (Reach not yet programmatically verified — X blocks scrapers.)
+- **Apr 17 13:58–14:22 UTC:** 5 tweets from @kirubeltewodro2 on the paraphrase-failure / symbolic-dispatch / LLM-writes-query framing. Verified via Twitter syndication endpoint — **5 total likes, 0 replies, 0 retweets** across the set. Breakdown:
+  - 4 broadcasts (IDs `2045145936263802911`, `2045145575222317228`, `2045144780665950547`, `2045144130271977968`) — 1 + 1 + 0 + 1 = **3 likes**
+  - **1 reply-threaded placement under @ycombinator** ([status 2044838231397560596](https://x.com/ycombinator/status/2044838231397560596)) — `2045139855294783647` — **2 likes**, the best-performing of the 5. Consistent with Week 8 learning that reply-threading under larger accounts outperforms small-account broadcasts.
 
 ### Reddit — Posts & sustained multi-round threads (Week 9)
 
@@ -90,7 +92,7 @@ Substantive practitioner engagement; follow-up conceded *"the whole field of age
 3. **Benchmark pass@1 intentionally not externalized.** The team's self-constructed 54-query PG+Mongo suite is 6 paraphrases × 9, so an internally-reported 1.0 on that suite would be trivially disprovable. Saturday's honest 2-query DAB run returned pass@1=0.0. We did not post either number externally.
 4. **u/trollied inbound on `1soeoq5` handled.** Substantive pragmatic pushback ("write the SQL yourself") → firm reply `ogva5a9` (2026-04-18 09:26 UTC) conceded the kernel and reframed the failure as symbolic-router mis-dispatch, not LLM non-determinism.
 5. **B1zmark thread ended with snark, not capitulation.** We do not frame `"Cool, then do it :p"` as a "win" externally; logged as "concedes substance, thread resting."
-6. **X + Discord reach for Apr 18 posts not programmatically verified.** Both platforms block scrapers without auth; manual verification owed for final metrics.
+6. **Discord reach for Apr 18 messages not programmatically verified.** Discord blocks scrapers without auth; manual scan of HF / EleutherAI / LlamaIndex posts shows no replies as of this compile. X verification completed via syndication endpoint (see above).
 
 ---
 
@@ -142,9 +144,9 @@ Substantive practitioner engagement; follow-up conceded *"the whole field of age
 
 ## Post-Submission Verification Owed
 
-- Manual X engagement check for Apr 18 @kirubeltewodro2 broadcasts (5 tweets)
-- Manual Discord reply check across HF / EleutherAI / LlamaIndex posts
-- Final reach tally to be appended to this file once auth-blocked platforms are reviewed
+- ✅ X engagement check completed via syndication endpoint: 5 tweets, 5 total likes, 1 reply-thread placement under @ycombinator (best performer at 2 likes).
+- Manual Discord reply check across HF / EleutherAI / LlamaIndex posts — no replies observed in current pass.
+- If practitioners reply after submission, append updates here.
 
 ---
 _End of Week 9 Engagement Portfolio._
